@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Layout>
       <div>
-          <Text
+          {/* <Text
             as={"span"}
             bgGradient={
               "linear(to-tr, brand.main, brand.200, brand.300, brand.400, brand.600)"
@@ -16,7 +16,7 @@ export default function Home() {
             fontWeight="extrabold"
           >
             This is a home page
-          </Text>
+          </Text> */}
       </div>
     </Layout>
   );
