@@ -41,9 +41,9 @@ export default function Recommendation() {
           >
             Student Feedback
           </Text>
-          <Comment height = "150px" width = "300px" color = "blue"></Comment>
+          <Comment height = "150px" width = "300px" color = "lightblue"></Comment>
           <div></div>
-          <Comment height = "125px" width = "250px" color = "purple"></Comment>
+          <Comment height = "125px" width = "250px" color = "lavender"></Comment>
 
       </div>
     </Layout>

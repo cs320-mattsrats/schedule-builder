@@ -3,3 +3,8 @@
     width: 50px;
     background-color: #555;
 }
+.element {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
