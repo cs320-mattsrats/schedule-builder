@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD
 set VIRTUAL_ENV=C:\Users\trung\OneDrive\Documents\GitHub\schedule-builder\api\venv
+=======
+set VIRTUAL_ENV=C:\Users\jjsch\Documents\School\College\Classes\Spring 2024\COMPSCI 320\Project\schedule-builder\api\venv
+>>>>>>> 94cf7a435d38b3f80163b3171a2a7d2d28f85dd2
 
 if not defined PROMPT set PROMPT=$P$G
 
@@ -25,6 +29,10 @@ if defined _OLD_VIRTUAL_PATH set PATH=%_OLD_VIRTUAL_PATH%
 if not defined _OLD_VIRTUAL_PATH set _OLD_VIRTUAL_PATH=%PATH%
 
 set PATH=%VIRTUAL_ENV%\Scripts;%PATH%
+<<<<<<< HEAD
+=======
+set VIRTUAL_ENV_PROMPT=(venv) 
+>>>>>>> 94cf7a435d38b3f80163b3171a2a7d2d28f85dd2
 
 :END
 if defined _OLD_CODEPAGE (
