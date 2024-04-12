@@ -1,0 +1,25 @@
+.heading {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.schedule{
+    width: 700px;
+    height: 200px;
+    background-color: #5ac0d4;
+    border-radius: 10px;
+}
+
+.suggestions{
+    width: 700px;
+    height: 100px;
+    background-color: #8bbd49;
+    border-radius: 10px;
+}
+
+.watchlist{
+    width: 700px;
+    height: 100px;
+    background-color: #d96868;
+    border-radius: 10px;
+}
