@@ -6,6 +6,8 @@ app = Flask(__name__)
 app.register_blueprint(calendar)
 CORS(app)
 
+app.register_blueprint(calendar)
+CORS(app)
 @app.route('/', methods=["GET"])
 def status():
     return jsonify({

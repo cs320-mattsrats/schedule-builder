@@ -96,11 +96,14 @@ function global:deactivate ([switch]$NonDestructive) {
         Remove-Item -Path env:VIRTUAL_ENV
     }
 
+<<<<<<< HEAD
+=======
     # Just remove VIRTUAL_ENV_PROMPT altogether.
     if (Test-Path -Path Env:VIRTUAL_ENV_PROMPT) {
         Remove-Item -Path env:VIRTUAL_ENV_PROMPT
     }
 
+>>>>>>> 94cf7a435d38b3f80163b3171a2a7d2d28f85dd2
     # Just remove the _PYTHON_VENV_PROMPT_PREFIX altogether:
     if (Get-Variable -Name "_PYTHON_VENV_PROMPT_PREFIX" -ErrorAction SilentlyContinue) {
         Remove-Variable -Name _PYTHON_VENV_PROMPT_PREFIX -Scope Global -Force
@@ -233,7 +236,10 @@ if (-not $Env:VIRTUAL_ENV_DISABLE_PROMPT) {
         Write-Host -NoNewline -ForegroundColor Green "($_PYTHON_VENV_PROMPT_PREFIX) "
         _OLD_VIRTUAL_PROMPT
     }
+<<<<<<< HEAD
+=======
     $env:VIRTUAL_ENV_PROMPT = $Prompt
+>>>>>>> 94cf7a435d38b3f80163b3171a2a7d2d28f85dd2
 }
 
 # Clear PYTHONHOME
@@ -245,6 +251,8 @@ if (Test-Path -Path Env:PYTHONHOME) {
 # Add the venv to the PATH
 Copy-Item -Path Env:PATH -Destination Env:_OLD_VIRTUAL_PATH
 $Env:PATH = "$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH"
+<<<<<<< HEAD
+=======
 
 # SIG # Begin signature block
 # MIIvJAYJKoZIhvcNAQcCoIIvFTCCLxECAQExDzANBglghkgBZQMEAgEFADB5Bgor
@@ -500,3 +508,4 @@ $Env:PATH = "$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH"
 # pMz2Wu3m0Tg4o5S09KR7zCHWqlutSriuC2nirqNE+onlbxYUx2JrXk5V+LrfNDAQ
 # 0MPcQ1A5d6j7kNjY2262Nh6dU6fPNnUT
 # SIG # End signature block
+>>>>>>> 94cf7a435d38b3f80163b3171a2a7d2d28f85dd2
