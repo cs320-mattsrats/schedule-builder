@@ -9,7 +9,7 @@ import {
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
     return (
         <>
-            <Container maxW={"7xl"}>
+            <Container maxW={"6xl"}>
                 <Header />
             </Container>
             <Container maxW={"8xl"} padding={10}>
