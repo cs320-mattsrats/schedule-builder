@@ -11,13 +11,15 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         <>
             <Container maxW={"6xl"}>
                 <Header />
-            
-            <main className="lg:pl-[256px] h-full pt-[50px] lg:pt-0">
-                <div className="max-w-[1056px] mx-auto pt-6 h-full">
-                {children}
-                </div>
-            </main>
             </Container>
+            <Container maxW={"8xl"} padding={10}>
+                <main className="lg:pl-[256px] h-full pt-[50px] lg:pt-0">
+                    <div className="max-w-[1056px] mx-auto pt-6 h-full">
+                    {children}
+                    </div>
+                </main>
+            </Container>
+            
         </>
     )
 } 
