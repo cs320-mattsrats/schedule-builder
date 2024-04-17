@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import Course from "@/components/Course";
 import { Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Button, Heading, Checkbox, CheckboxGroup } from "@chakra-ui/react";
+import Schedule from '@/components/build-calendar/courseCalendar/Schedule'
 
 export default function Home() {
   return (
@@ -49,6 +50,8 @@ export default function Home() {
             
           </SimpleGrid>
         </div>
+
+        <Schedule/>
         
         <div>
         <Text
