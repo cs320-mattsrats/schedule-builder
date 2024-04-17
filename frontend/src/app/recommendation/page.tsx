@@ -6,7 +6,7 @@ import {
 } from "@chakra-ui/react";
 
 // [SYL-14] import recommendation page css file and components
-import Course from '@/components/recommendation/Course'
+import Course from '@/components/Course'
 import Comment from '@/components/recommendation/Comment'
 import './page.css'
 

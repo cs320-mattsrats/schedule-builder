@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import Course from "@/components/recommendation/Course";
+import Course from "@/components/Course";
 import { Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Button, Heading, Checkbox, CheckboxGroup } from "@chakra-ui/react";
 
 export default function Home() {
