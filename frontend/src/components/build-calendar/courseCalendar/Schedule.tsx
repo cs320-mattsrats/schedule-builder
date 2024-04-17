@@ -1,79 +1,43 @@
+import React from 'react';
+import { Table, TableCaption, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+
 export default function Schedule() {
+  // Function to generate time slots from 8 am to 7 pm
+  const generateTimeSlots = () => {
+    const timeSlots = [];
+    for (let hour = 8; hour <= 19; hour++) {
+      timeSlots.push(`${hour}:00`);
+    }
+    return timeSlots;
+  };
+
+  // Function to generate days of the week
+  const generateDaysOfWeek = () => {
+    return ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  };
+
   return (
-    <table className = "calendar">
-        <tr>
-            <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
-        </tr>
-        <tr>
-            <td>8:00 AM</td>
-        </tr>
-        <tr>
-            <td>8:30 AM</td>
-        </tr>
-        <tr>
-            <td>9:00 AM</td>
-        </tr>
-        <tr>
-            <td>9:30 AM</td>
-        </tr>
-        <tr>
-            <td>10:00 AM</td>
-        </tr>
-        <tr>
-            <td>10:30 AM</td>
-        </tr>
-        <tr>
-            <td>11:00 AM</td>
-        </tr>
-        <tr>
-            <td>11:30 AM</td>
-        </tr>
-        <tr>
-            <td>12:00 PM</td>
-        </tr>
-        <tr>
-            <td>12:30 PM</td>
-        </tr>
-        <tr>
-            <td>1:00 PM</td>
-        </tr>
-        <tr>
-            <td>1:30 PM</td>
-        </tr>
-        <tr>
-            <td>2:00 PM</td>
-        </tr>
-        <tr>
-            <td>2:30 PM</td>
-        </tr>
-        <tr>
-            <td>3:00 PM</td>
-        </tr>
-        <tr>
-            <td>3:30 PM</td>
-        </tr>
-        <tr>
-            <td>4:00 PM</td>
-        </tr>
-        <tr>
-            <td>4:30 PM</td>
-        </tr>
-        <tr>
-            <td>5:00 PM</td>
-        </tr>
-        <tr>
-            <td>5:30 PM</td>
-        </tr>
-        <tr>
-            <td>6:00 PM</td>
-        </tr>
-    </table>
-    );
+    <Table className="calendar" variant="simple">
+      <TableCaption>Weekly Schedule</TableCaption>
+      <Thead>
+        <Tr>
+          <Th>Time</Th>
+          {generateDaysOfWeek().map((day) => (
+            <Th key={day}>{day}</Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {generateTimeSlots().map((time) => (
+          <Tr key={time}>
+            <Td>{time}</Td>
+            {/* Placeholder for schedule slots */}
+            {generateDaysOfWeek().map((day) => (
+              <Td key={`${day}-${time}`}></Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  );
 }

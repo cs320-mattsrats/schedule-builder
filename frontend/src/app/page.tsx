@@ -51,6 +51,17 @@ export default function Home() {
           </SimpleGrid>
         </div>
 
+        <Text
+          as={"span"}
+          bgGradient={
+            "linear(to-tr, brand.main, brand.200, brand.300, brand.400, brand.600)"
+          }
+          fontSize={{ md: "60px", sm: "6xl" }}
+          fontWeight="extrabold"
+        >
+          Current Schedule
+        </Text>
+
         <Schedule/>
         
         <div>
