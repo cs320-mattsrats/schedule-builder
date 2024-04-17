@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import Course from "@/components/Course";
 import { Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Button, Heading, Checkbox, CheckboxGroup } from "@chakra-ui/react";
 
 export default function Home() {
@@ -16,20 +17,36 @@ export default function Home() {
           Watchlist
         </Text>
 
-        {/* Parent container for the SimpleGrid */}
+        {/* Parent container for the SimpleGrid of courses */}
         <div style={{ marginTop: '20px' }}>
-          <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
-            <Card>
-              <CardHeader>
-                <Heading size='md'> CS 220: Programming Methodology</Heading>
-              </CardHeader>
-              <CardBody>
-                <Text>Most iconic class with the most iconic professor Marius Minea.</Text>
-              </CardBody>
-              <CardFooter>
-                <Button>View here</Button>
-              </CardFooter>
-            </Card>
+          <SimpleGrid columns={4} spacing={5}>
+            <Course 
+              courseTitle='CS 220: Programming Methodology'
+              courseDescription="Most iconic class with the most iconic professor Marius Minea.">
+            </Course>
+
+            <Course 
+              courseTitle='CS 230: Computer Systems Principles'
+              courseDescription="Most iconic class with the most iconic professor Joe Chiu.">
+            </Course>
+
+            <Course 
+              courseTitle='CS 250: Introduction to Computation'
+              courseDescription="Most iconic class with the most iconic professor David Mix Barrington.">
+            </Course>
+
+            <Course 
+              courseTitle='CS 311: Introduction to Algorithms'
+              courseDescription="Most iconic class with the most iconic professor Ghazaleh Parvini.">
+            </Course>
+
+            <Course 
+              courseTitle='CS 320: Introduction to Software Engineering'
+              courseDescription="Most iconic class with the most iconic professor Matthew Rattigan (WOO HOO :)).">
+            </Course>
+
+            
+            
           </SimpleGrid>
         </div>
         
