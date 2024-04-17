@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import Course from "@/components/Course";
 import { Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Button, Heading, Checkbox, CheckboxGroup } from "@chakra-ui/react";
+import Schedule from '@/components/build-calendar/courseCalendar/Schedule'
 
 export default function Home() {
   return (
@@ -49,6 +50,19 @@ export default function Home() {
             
           </SimpleGrid>
         </div>
+
+        <Text
+          as={"span"}
+          bgGradient={
+            "linear(to-tr, brand.main, brand.200, brand.300, brand.400, brand.600)"
+          }
+          fontSize={{ md: "60px", sm: "6xl" }}
+          fontWeight="extrabold"
+        >
+          Current Schedule
+        </Text>
+
+        <Schedule/>
         
         <div>
         <Text
