@@ -19,19 +19,30 @@ Schedule Builder is an application designed to assist computer science students 
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/cs320-mattsrats/schedule-builder
+    ```bash
+    git clone https://github.com/cs320-mattsrats/schedule-builder
+    ```
 
 2. Navigate to Frontend:
-  cd frontend
 
-3. Install Dependences:
-  npm install
+    ```bash
+    cd frontend
+    ```
+
+3. Install Dependencies:
+
+    ```bash
+    npm install
+    ```
 
 4. Build Frontend:
-  npm run build
+
+    ```bash
+    npm run build
+    ```
 
 5. Start Application:
-   npm start
 
-  
+    ```bash
+    npm start
+    ```
