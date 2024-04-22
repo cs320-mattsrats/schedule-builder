@@ -1,16 +1,34 @@
+import { 
+    ChakraProvider,
+    Box,
+    Button,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    Heading,
+    Center, 
+    Text } from '@chakra-ui/react'
+import theme from './theme';
+
 // FIXME: Be able to display the text of the comment maybe?
 export default function Comment(props:any) {  
     return (
-        <div style={
-            {
-                height: props.height, 
-                width: props.width, 
-                backgroundColor: props.color,
-                borderRadius: "50%"
-                }
-            }
-        >
-        </div>
-        // <p style = {{backgroundColor: props.color}}>Hi!</p>
+        <ChakraProvider theme={theme}>
+        <Box position="relative" h="20vh" p={12}>
+          <Center>
+          <Card >
+          <CardHeader>
+            <Heading>{props.course}</Heading>
+          </CardHeader>
+          <CardBody>
+            {props.comment}
+          </CardBody>
+          {/* <CardFooter>
+          </CardFooter> */}
+        </Card>
+          </Center>
+        </Box>
+      </ChakraProvider>
     );
 }
