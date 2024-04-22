@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* Parent container for the SimpleGrid of courses */}
         <div style={{ marginTop: '20px' }}>
-          <SimpleGrid columns={4} spacing={5}>
+          <SimpleGrid columns={5} spacing={5}>
             <Course 
               courseTitle='CS 220: Programming Methodology'
               courseDescription="Most iconic class with the most iconic professor Marius Minea.">
