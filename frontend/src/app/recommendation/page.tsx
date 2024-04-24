@@ -5,7 +5,7 @@ import {
   Text, SimpleGrid
 } from "@chakra-ui/react";
 
-import Course from '@/components/Course'
+import Course from '@/components/recommendation/Course'
 import Comment from '@/components/recommendation/Comment'
 import './page.css'
 

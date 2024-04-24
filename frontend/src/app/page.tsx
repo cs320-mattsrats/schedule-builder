@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import Course from "@/components/Course";
+import Course from "@/components/recommendation/Course";
 import { Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Button, Heading, Checkbox, CheckboxGroup } from "@chakra-ui/react";
 import Schedule from '@/components/build-calendar/courseCalendar/Schedule'
 
