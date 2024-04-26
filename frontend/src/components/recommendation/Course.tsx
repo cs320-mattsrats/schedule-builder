@@ -1,4 +1,5 @@
 import { Card, CardBody, CardHeader, Heading, Text, Button, CardFooter } from "@chakra-ui/react";
+import Description from "./Description";
 
 export default function Course(props: any) {
   return (
@@ -11,7 +12,7 @@ export default function Course(props: any) {
       <Text>Description: {props.courseDescription}</Text>
     </CardBody>
     <CardFooter>
-    <Button>View Details</Button>
+      <Description courseTitle = {props.courseTitle} moreDetails = {props.courseMoreDetails}/>
     </CardFooter>
   </Card>
   );
