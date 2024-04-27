@@ -22,8 +22,13 @@ import {
           <ModalContent>
             <ModalHeader>{props.courseTitle}</ModalHeader>
             <ModalCloseButton />
+
             <ModalBody>
-                {props.moreDetails}
+                <strong>Course Description:</strong> {props.courseDescription}
+            </ModalBody>
+
+            <ModalBody>
+              <strong>Meeting Times:</strong> {props.moreDetails}
             </ModalBody>
   
             <ModalFooter>
