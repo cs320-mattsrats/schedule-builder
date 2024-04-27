@@ -46,3 +46,13 @@ Schedule Builder is an application designed to assist computer science students 
     ```bash
     npm start
     ```
+
+6. Backend
+pip install virtualenv
+virtualenv (nameofapp)
+.\(nameofapp)\Scripts\activate.bat
+
+7. Install Flask-PyMongo flask-cors
+pip install flask Flask-PyMongo flask-cors
+
+
