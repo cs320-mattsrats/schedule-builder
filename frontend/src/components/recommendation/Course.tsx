@@ -12,7 +12,7 @@ export default function Course(props: any) {
       <Text>Description: {props.courseDescription}</Text>
     </CardBody>
     <CardFooter>
-      <Description courseTitle = {props.courseTitle} moreDetails = {props.courseMoreDetails}/>
+      <Description courseTitle = {props.courseTitle} moreDetails = {props.courseMoreDetails} courseDescription = {props.courseDescription}/>
     </CardFooter>
   </Card>
   );

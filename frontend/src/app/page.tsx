@@ -51,8 +51,6 @@ export default function Home() {
               courseMoreDetails="Class meets from 2:30pm-3:45pm and in Morril Ctr 1 rm N326">
             </Course>
 
-            
-            
           </SimpleGrid>
         </div>
 
