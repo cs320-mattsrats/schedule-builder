@@ -1,9 +1,11 @@
 from flask import jsonify, Blueprint
+from database import db
 
 calendar = Blueprint("calendar", __name__)
 
-@calendar.route("/test<n>", methods = ["GET"])
-def test(n):
-    return jsonify({
-        "test" : n
-    })
+collection = db['courses']
+
+@calendar.route("/getdata", methods = ["GET"])
+def retrieve_data():
+    data = collection.find()
+    return jsonify(data)
