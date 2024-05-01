@@ -171,21 +171,20 @@ Below the cards showing these statistics there is a card that displays a pie cha
 The cards that show statistics only work when the data being provided is current. When testing, we altered the dates in the mock data provided in order to make sure that these cards worked as planned, but with the original data the statistics don't show because they utilize the current date and time to calculate posts and comments made in the past 24 hours.
 
 # Team Member Names:
-Liam Gates
 
-Derek Lacy
+Hanna Jiang
 
-Kevin Oliveria
+Joseph Schwab
 
-Sam O'Nuallain
+Kailin Lou
 
-Agneshka Rohra
+Mary Foley
 
-Algis Petlin
+Soham Shah
 
-Anisha Prahti
+Trung Quoc Nguyen
 
-Sneha Pullanoor
+Vamsi Kontham
 
 # GitHub Respository Link:
-Link: https://github.com/compsci320/campuswire-stats 
+Link: https://github.com/cs320-mattsrats/schedule-builder
