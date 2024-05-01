@@ -11,30 +11,25 @@ import Comment from '@/components/recommendation/Comment';
 import './page.css';
 import getRandomCourses from '@/hook/getRandomCourses';
 import { TCourse } from '@/types/courses';
-
-async function getCourses() {
-  const requestInstructions = {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-  }
-
-  return await fetch('http://127.0.0.1:5000/courses', requestInstructions)
-      .then(res => res.json());
-}
+import axios from 'axios';
 
 export default function Recommendation() {
 
   const [courses, setCourses] = useState<TCourse[]>([]);
 
+  const getCourses = async () => {
+    await axios
+      .get('http://127.0.0.1:5000/courses')
+      .then(response => {
+        setCourses(getRandomCourses(response.data.data,5))
+        console.log(response.data.data)
+      })
+  }
+
   //Fetch data from the Flask server
   useEffect(() => {
     console.log('Fetching data...');
     getCourses()
-      .then(data => {
-        console.log('Data received:', typeof(data));
-        setCourses(data)
-      })
-      .catch(err => console.error('Error:', err))
   }, [])
 
   return (
@@ -86,7 +81,6 @@ export default function Recommendation() {
                 // type2='DIS'
               />
             ))}
-            
 
             <Course 
               courseTitle='CS 230: Computer Systems Principles'

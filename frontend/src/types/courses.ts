@@ -3,5 +3,6 @@ export type TCourse = {
     _id: string;
     subject: string;
     title: string; 
+    brief: string;
     description: string;
 }
