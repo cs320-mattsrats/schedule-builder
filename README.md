@@ -158,17 +158,6 @@ The section that displays different courses is formatted into colorful side by s
 
 The list of courses selected for the next semester is a panel to the right of the screen that dispalys the semester, and under it the courses a user has selected for an upcoming semseter, as wel as designations of whether it is a major requiremnt, or a general education requirement. The intention of this panel is to organize the courses a student plans to take, as well as how they distribute into their major requirements and university breadth requirements.
 
-In the build
-
-In the engagement page, you will find a bar graph and a table. The goal of the page is to inform the users of how the class and specific people have engaged with the campuswire page throughout the semester.
-
-The graph shows user engagement throughout the semester by plotting the number unique users that made and "action" (post, comment, like, ...) for each day in the semester. 
-
-The table below the graph shows the total posts, total comments, and last seen date for every person that has used the campuswire page. The last seen date is the last date that a user made a post or comment. By default, the table shows the data for 10 people at a time. You can flip between pages in the table by clicking the arrows in the bottom right, and you can adjust how many rows are shown at a time using the dropdown in the bottom right.
-
-You can sort the table by name, number of posts, number of comments, or last seen date by clicking the "sort by" button between the graph and the table, and you can choose ascending or descending order by clicking the button to the right which says "Ascending" by default.
-
-
 ## Recommendation
 You can view the traffic page by clicking the "Traffic" tab on the left.
 
