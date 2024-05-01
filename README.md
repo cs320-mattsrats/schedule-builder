@@ -137,7 +137,7 @@ By default, our app uses a backend hosted online. You can find server/README.md 
 
 
 ## Home Page
-You can view the trends page by clicking the "Home" tab on the left.
+You can view the trends page by clicking the "Home" tab on the navigation bar.
 
 In the home page, at the top there is a navigation bar with tabs to you can toggle between "Home", "Build Schedule", and "Recommendation" as well as a light/dark mode, and a login/sign up section. The home page is formatted into three main sections, a "Watchlist", "Current Schedule", and "Classes Left to Take." 
 
@@ -147,8 +147,18 @@ The Current Schedule section is a table that intends to display the courses a us
 
 The Clases Left to Take section is a checklist of courses a student has left to take to complete their major. The check boxes consist of the core computer science requiremets a computer science student needs to complete in order to get their degree. Clicking the box next to a course will mark it as completed to allow students to easily see what courses they have taken.
 
-## Engagement Page
-You can view the engagement page by clicking the "Build Schedule" tab on the left.
+The home page is the heart of our web application, and is intended to be the hub for where the user can quickly glance at relevant topics regarding course selection and schedule building.
+
+## Build Schedule
+You can view the trends page by clicking the "Build Schedule" tab on the navigation bar.
+
+In the build schedule page, at the top there is a navigation bar with tabs to you can toggle between "Home", "Build Schedule", and "Recommendation" as well as a light/dark mode, and a login/sign up section. The build schedule page is formatted into two main sections, a section that displays different courses and a list of courses selected for a semester.
+
+The section that displays different courses is formatted into colorful side by side textblocks of potential courses labelled with their course IDs. These serve as an array of potential courses the student is considering. This section intends to allow students to have a broad overview of potential courses they coudl take.
+
+The list of courses selected for the next semester is a panel to the right of the screen that dispalys the semester, and under it the courses a user has selected for an upcoming semseter, as wel as designations of whether it is a major requiremnt, or a general education requirement. The intention of this panel is to organize the courses a student plans to take, as well as how they distribute into their major requirements and university breadth requirements.
+
+In the build
 
 In the engagement page, you will find a bar graph and a table. The goal of the page is to inform the users of how the class and specific people have engaged with the campuswire page throughout the semester.
 
@@ -159,7 +169,7 @@ The table below the graph shows the total posts, total comments, and last seen d
 You can sort the table by name, number of posts, number of comments, or last seen date by clicking the "sort by" button between the graph and the table, and you can choose ascending or descending order by clicking the button to the right which says "Ascending" by default.
 
 
-## Traffic Page
+## Recommendation
 You can view the traffic page by clicking the "Traffic" tab on the left.
 
 In the traffic page there are several cards. Four cards have statistics that provide information on the traffic that the campuswire page has been receiving. Two cards are charts that show traffic data as well. The goal of the page is to inform the users of different traffic activity that the page has been receiving recently.
