@@ -6,7 +6,7 @@ import showLimitedWords from "@/hook/showLimitedWords";
 
 const Course: FC<TCourseCard> = ({course}) => {
 
-  course = { ...course, "brief": showLimitedWords(course.description, 40) };
+  course = { ...course, "brief": showLimitedWords(course.description, 10) };
 
   return (
     <Card>

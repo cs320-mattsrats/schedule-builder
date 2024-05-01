@@ -3,38 +3,38 @@ import { TCourse } from "@/types/courses";
 
 export const mock_courses: TCourse[] = [
   {
-    id: "1",
-    _id: "course_1",
-    subject: "Computer Science",
-    title: "Introduction to Computer Science",
-    description: "This course provides a comprehensive introduction to the fundamental concepts of computer science, including algorithms, data structures, programming languages, and software development principles.",
+    _id: '662e5268060547abde7517a9', 
+    description: 'This course covers a broad range of topics related…390R, or COMPSCI 466, or E&C-ENG 371). 3 credits.', 
+    id: 'COMPSCI 564', 
+    subject: 'COMPSCI', 
+    title: 'Cyber Effects: Reverse Engineering, Exploit Analysis, and Capability Development'
   },
   {
-    id: "2",
-    _id: "course_2",
-    subject: "Artificial Intelligence",
-    title: "Artificial Intelligence and Machine Learning",
-    description: "Explore the exciting field of artificial intelligence and machine learning, covering topics such as neural networks, deep learning, natural language processing, and ethical considerations in AI.",
+    _id: '662e5268060547abde7517aa', 
+    description: 'This course introduces students to the principal a…equisites: COMPSCI 365 or COMPSCI 377. 3 credits.', 
+    id: 'COMPSCI 565', 
+    subject: 'COMPSCI', 
+    title: 'Advanced Digital Forensic Systems'
   },
   {
-    id: "3",
-    _id: "course_3",
-    subject: "Psychology",
-    title: "Introduction to Psychology",
-    description: "An introductory course to the principles and theories of psychology, including topics like behaviorism, cognitive psychology, developmental psychology, and psychological disorders.",
+    _id: '662e5268060547abde7517ab', 
+    description: 'Intelligent visual computing is an emerging new fi…383, and COMPSCI 373 (or COMPSCI 473). 3 credits.', 
+    id: 'COMPSCI 574', 
+    subject: 'COMPSCI', 
+    title: 'Intelligent Visual Computing'
   },
   {
-    id: "4",
-    _id: "course_4",
-    subject: "Accounting",
-    title: "Financial Accounting",
-    description: "Learn the fundamentals of financial accounting, covering topics such as balance sheets, income statements, cash flow analysis, financial reporting, and principles of accounting.",
+    _id: '662e5268060547abde7517ac', 
+    description: 'The ability to transmit quantum information over l…STC 515 or PHYSICS 281 or PHYSICS 287). 3 credits', 
+    id: 'COMPSCI 590AB', 
+    subject: 'COMPSCI', 
+    title: 'Quantum Cryptography and Communication'
   },
-  {
-    id: "5",
-    _id: "course_5",
-    subject: "Environmental Science",
-    title: "Environmental Science",
-    description: "Delve into the study of environmental science, exploring ecological principles, environmental conservation, sustainability practices, climate change, and environmental policy.",
-  },
-];
+  // {
+  //   _id: '662e5268060547abde7517ad', 
+  //   description: 'This course covers wireless networking and mobilit…Prerequisites: COMPSCI 453 or ECE 374. 3 credits.', 
+  //   id: 'COMPSCI 590AE', 
+  //   subject: 'COMPSCI', 
+  //   title: 'Mobile and Wireless Networks'
+  // },
+]
