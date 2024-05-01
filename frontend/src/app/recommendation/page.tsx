@@ -1,15 +1,37 @@
 'use client'
 
+import React, {useState, useEffect} from 'react'; 
 import Layout from "@/components/layout/Layout";
 import {
   Text, SimpleGrid
 } from "@chakra-ui/react";
 
 import Course from '@/components/recommendation/Course'
-import Comment from '@/components/recommendation/Comment'
-import './page.css'
+import Comment from '@/components/recommendation/Comment';
+import './page.css';
+import getRandomCourses from '@/hook/getRandomCourses';
+import { TCourse } from '@/types/courses';
+import axios from 'axios';
 
 export default function Recommendation() {
+
+  const [courses, setCourses] = useState<TCourse[]>([]);
+
+  const getCourses = async () => {
+    await axios
+      .get('http://127.0.0.1:5000/courses')
+      .then(response => {
+        setCourses(getRandomCourses(response.data.data,5))
+        console.log(response.data.data)
+      })
+  }
+
+  //Fetch data from the Flask server
+  useEffect(() => {
+    console.log('Fetching data...');
+    getCourses()
+  }, [])
+
   return (
     <Layout>
       <div>
@@ -23,21 +45,42 @@ export default function Recommendation() {
           >
             Hot Courses
           </Text>
-
-          <SimpleGrid columns={5} spacing={5}>
-            <Course 
-              courseTitle='CS 220: Programming Methodology'
-              courseDescription="Most iconic class with the most iconic professor Marius Minea."
-              professor='Marius Minea'
-              location1='ILC S131'
-              time1='8:30AM'
-              days1='TTH'
-              type1='LEC'
-              location2='ILC S131'
-              time2='10:10AM'
-              days2='F'
-              type2='DIS'>
-            </Course>
+          {courses ? (
+              <SimpleGrid columns={5} spacing={5}>
+              {courses.map((course, index) => (
+                <Course
+                  key = {index} 
+                  course = {course}
+                />
+              ))}
+              </SimpleGrid>
+          ) : (
+              // Page for the loading screen
+              <div className="centered">
+              <div className="trendbar-loading">
+                  <div className="spinner"></div>
+                  <p>Loading...</p>
+              </div>
+          </div>
+          )}
+          {/* <SimpleGrid columns={5} spacing={5}>
+            {courses.map((x, index) => (
+              <Course
+                key = {index} 
+                courseTitle = {x.title}
+                courseDescription = {x.description}
+                courseSubject = {x.subject}
+                // professor='Marius Minea'
+                // location1='ILC S131'
+                // time1='8:30AM'
+                // days1='TTH'
+                // type1='LEC'
+                // location2='ILC S131'
+                // time2='10:10AM'
+                // days2='F'
+                // type2='DIS'
+              />
+            ))}
 
             <Course 
               courseTitle='CS 230: Computer Systems Principles'
@@ -95,7 +138,7 @@ export default function Recommendation() {
               type2='DIS'>
             </Course>
             
-          </SimpleGrid>
+          </SimpleGrid> */}
           
 
           <Text

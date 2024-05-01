@@ -3,7 +3,6 @@ from datetime import datetime
 import requests
 import re
 from unidecode import unidecode
-import pytz
 
 def clean_text(s: str):
     for r in ['\xa0', '\n', '\t']:
@@ -188,3 +187,23 @@ def scrape_courses():
             course_map[course_id]['frequency'] = freq
 
     return course_map
+
+def scrape_course_schedule_fa2024():
+    url = 'https://www.cics.umass.edu/content/fall-24-course-schedule'
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        soup = scrape(url)
+        # Here, you'd write code to parse the specific data you want from the soup object
+        # print(soup)
+        # For example, let's say you want to get all course titles
+        # course_titles = [title.text for title in soup.find_all('h2', class_='title')]
+        
+        # # Store the data in MongoDB
+        # courses_collection = mongo.db.courses
+        # for title in course_titles:
+        #     courses_collection.insert_one({'title': title})
+        
+        return 'Data scraped and stored successfully!'
+    else:
+        return 'Error scraping data'
