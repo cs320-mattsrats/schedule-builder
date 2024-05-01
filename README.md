@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Overview
 
-This project, Schedule Builder, is a web application that provides an interface students to plan their courses for the next semester.
+This project, Schedule Builder, is a web application that provides an interface students to plan their courses for the upcoming semester.
 
 ## File Structure
 
@@ -25,8 +25,6 @@ This project, Schedule Builder, is a web application that provides an interface 
         /requrements.txt: Docuemnt of backend requirements
 
         /web.py: Formats backend text retrievd from backend for courses
-
-            # Come back to backend later
 
     /frontend: Frontend folder
 
@@ -159,15 +157,15 @@ The section that displays different courses is formatted into colorful side by s
 The list of courses selected for the next semester is a panel to the right of the screen that dispalys the semester, and under it the courses a user has selected for an upcoming semseter, as wel as designations of whether it is a major requiremnt, or a general education requirement. The intention of this panel is to organize the courses a student plans to take, as well as how they distribute into their major requirements and university breadth requirements.
 
 ## Recommendation
-You can view the traffic page by clicking the "Traffic" tab on the left.
+You can view the trends page by clicking the "Build Schedule" tab on the navigation bar.
 
-In the traffic page there are several cards. Four cards have statistics that provide information on the traffic that the campuswire page has been receiving. Two cards are charts that show traffic data as well. The goal of the page is to inform the users of different traffic activity that the page has been receiving recently.
+In the build schedule page, at the top there is a navigation bar with tabs to you can toggle between "Home", "Build Schedule", and "Recommendation" as well as a light/dark mode, and a login/sign up section. The recommendation page is formatted into two main sections, a "Hot Courses" and "Student Feedback" section. 
 
-The first card shows the current number of unanswered posts, and at the bottom of the card the number of hours since the most recent unanswered post was posted is reported. The second card shows the number of comments made in the past day, and at the bottom of the card is percentage increase or decrease in that number from the previous day. The third card shows the number of posts made in the past day, and at the bottom of the card is percentage increase or decrease in that number from the previous day. The fourth card shows the number of posts resolved in the past day, and at the bottom of the card is percentage increase or decrease in that number from the previous day.
+The Hot Courses sections consists of courses that are usually in demand courses from a databaes of Computer Science and Mathematics courses. Each course is displayed in a container with teh title of the course, a brief description, and clicking the "View All" button allows a user to see more details about a course such as the Professor and the entire description. This section intends to give students reccomendations on courses to take, as well as relevant information to inform their decision. 
 
-Below the cards showing these statistics there is a card that displays a pie chart. The pie chart reports the number of resolved posts compared to the number of unresolved posts. To the right of this card is another card that displays a line graph. This line graph displays the number of posts made on each day that the campuswire page has been active. 
+The Student Feedback section consists of shape containers with text in them meant to relay feedback from other students about courses. This section is under development as this requires backend integration from either Campuswire, RateMyTeacher, or another source. This section is intended to allow students to see what others have said about different courses to make more informed decisions while picking courses.
 
-The cards that show statistics only work when the data being provided is current. When testing, we altered the dates in the mock data provided in order to make sure that these cards worked as planned, but with the original data the statistics don't show because they utilize the current date and time to calculate posts and comments made in the past 24 hours.
+The Student Feedback section
 
 # Team Member Names:
 
