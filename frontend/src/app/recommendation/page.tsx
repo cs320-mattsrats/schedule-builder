@@ -109,17 +109,17 @@ export default function Recommendation() {
             Student Feedback
           </Text>
           <Flex>
-          <Comment height = "150px" width = "300px" color = "lightblue" comment="Marius is the coolest!" course="CS311">
+          <Comment pos="translate(-100px,-10px)" color = "lightblue" comment="Marius is the coolest!" course="CS311">
           </Comment>
           <div></div>
-          <Comment height = "125px" width = "250px" color = "lavender" comment="best class ever!" course="CS311">
+          <Comment pos="translate(-100px,-10px)" color = "lavender" comment="best class ever!" course="CS311">
           </Comment>
-          <Comment height = "150px" width = "300px" color = "lightblue" comment="Covers a lot of material, has lots of office hours" course="CS311">
+          <Comment pos="translate(-100px,-10px)" color = "lightblue" comment="Lots of office hours, covers a lot of material" course="CS311">
           </Comment>
           <div></div>
-          <Comment height = "125px" width = "250px" color = "lavender" comment="lecture heavy course" course="CS311"></Comment>
+          <Comment pos="translate(-100px,-10px)" color = "lavender" comment="lecture heavy course" course="CS311">
+          </Comment>
           </Flex>
-
       </div>
     </Layout>
   );

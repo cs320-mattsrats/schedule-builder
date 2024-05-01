@@ -1,13 +1,13 @@
 from flask import Flask, Response, jsonify
 from flask_cors import CORS
 from calendar_blueprint import calendar
+from recommendation_blueprint import recommendation
 
 app = Flask(__name__)
 app.register_blueprint(calendar)
+app.register_blueprint(recommendation)
 CORS(app)
 
-app.register_blueprint(calendar)
-CORS(app)
 @app.route('/', methods=["GET"])
 def status():
     return jsonify({
