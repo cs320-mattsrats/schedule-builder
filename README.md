@@ -136,19 +136,19 @@ By default, our app uses a backend hosted online. You can find server/README.md 
 # How To Use Our Website
 
 
-## Trends Page
-You can view the trends page by clicking the "Trend" tab on the left.
+## Home Page
+You can view the trends page by clicking the "Home" tab on the left.
 
-In the trend page, you notice five selectable topics at the top of the page. These topics are the top 5 most popular topics among the posts and comments in Campuswire. You will also notice a bar graph and a table with three button below it with the following labels: "Posts", "Likes", and "Comments". Finally, below the graph and the buttons is a list of posts. These posts correspond to the currently selected topic.
+In the home page, at the top there is a navigation bar with tabs to you can toggle between "Home", "Build Schedule", and "Recommendation" as well as a light/dark mode, and a login/sign up section. The home page is formatted into three main sections, a "Watchlist", "Current Schedule", and "Classes Left to Take." 
 
-Clicking one of the trending topics will change the list of posts and the contents of the graph. The graph will show information regarding the currently selected topic. The posts will also be relating to that particular topic. The reason that only the top 5 trending topics are shown is to decrease the risk of information overload but also provide enough information for comparisons. 
+The Watchlist sections consists of randomly selected courses from a databaes of Computer Science and Mathematics courses. Four courses are randomly selected when the page is refreshed, each course is displayed in a container with teh title of the course, a brief description, and clicking the "View All" button allows a user to see more details about a course such as the Professor and the entire description. This section intends to give students reccomendations on courses to take, as well as relevant information to inform their decision. 
 
-Clicking one of the table buttons will change what information the graph is displaying. By default, the graph will show the amount of posts made for the currently selected trending topic over time. However, by clicking a different button, the graph can show likes over time and comments over time. The goal of this information is to help instructors understand when students are engaging with a particular topic. This can help instructors better prepare to meet the needs of students.
+The Current Schedule section is a table that intends to display the courses a user wants to put in their schedule. The Table ranges from Monday to Friday and times go from 8am to 7pm daily. This section intends to input the classes selected by the user into a table format to visualize their weekly schedule.
 
-While scrolling down the list of posts, you may notice that some of the posts are highlighted black and have exclamation points on them. These indicated "critical posts". A critical post is any post that does not have any replies. The goal of highlighting these critical posts is to bring them to the attention of the instructor and hopefully expedite a response to the student who created the post. 
+The Clases Left to Take section is a checklist of courses a student has left to take to complete their major. The check boxes consist of the core computer science requiremets a computer science student needs to complete in order to get their degree. Clicking the box next to a course will mark it as completed to allow students to easily see what courses they have taken.
 
 ## Engagement Page
-You can view the engagement page by clicking the "Engagement" tab on the left.
+You can view the engagement page by clicking the "Build Schedule" tab on the left.
 
 In the engagement page, you will find a bar graph and a table. The goal of the page is to inform the users of how the class and specific people have engaged with the campuswire page throughout the semester.
 
