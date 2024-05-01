@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import {
     Button,
     Wrap,
@@ -13,19 +13,26 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
-    FormControl,
-    FormLabel,
-    Input
+    SimpleGrid,
+    Grid,
+    GridItem,
   } from '@chakra-ui/react'
   import { 
     CloseIcon, 
     AddIcon,
   } from '@chakra-ui/icons';
+import { SearchBar } from '../addCourse/SearchBar';
+import { mock_courses } from '@/mock/courses';
+import SuggestCourses from '../addCourse/SuggestCourses';
+import { useRouter } from "next/navigation";
+
 
 const Watchlist = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)   
+    const initialRef = useRef(null)
+    const finalRef = useRef(null);
+  const router = useRouter();
+
 
     return (
         <Flex flexDirection={"column"} gap="2">
@@ -87,13 +94,31 @@ const Watchlist = () => {
                 finalFocusRef={finalRef}
                 isOpen={isOpen}
                 onClose={onClose}
+                size = "6xl"
             >
             <ModalOverlay />
             <ModalContent>
             <ModalHeader>Search Classes</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
-                <Input ref={initialRef} placeholder='First name' />
+                <Grid templateColumns='repeat(5, 1fr)' gap={4}>
+                    <GridItem colSpan={3}>
+                        <SearchBar/>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <SimpleGrid columns={2} spacing={5}>
+                        {mock_courses.map((course, index) => (
+                            <SuggestCourses
+                            key = {index} 
+                            course = {course}
+                            />
+                        ))}
+                        </SimpleGrid>
+                    </GridItem>
+                    <GridItem>
+                        <Button colorScheme='linkedin' onClick={() => {router.push("/recommendation")}}>Recommendation Page</Button>
+                    </GridItem>
+                </Grid>
             </ModalBody>
             </ModalContent>
         </Modal>
