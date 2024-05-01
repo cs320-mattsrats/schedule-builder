@@ -165,8 +165,6 @@ The Hot Courses sections consists of courses that are usually in demand courses 
 
 The Student Feedback section consists of shape containers with text in them meant to relay feedback from other students about courses. This section is under development as this requires backend integration from either Campuswire, RateMyTeacher, or another source. This section is intended to allow students to see what others have said about different courses to make more informed decisions while picking courses.
 
-The Student Feedback section
-
 # Team Member Names:
 
 Hanna Jiang
