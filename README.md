@@ -178,10 +178,33 @@ To start the application, you can run:
 This command runs our app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### `cd api`
+
+### `for mac users: `. .venv/bin/activate`
+If this command results in an error, run `python3 -m venv .venv` first.
+
+### for windows users: `.venv\Scripts\activate`
+If this command results in an error, run `py -3 -m venv .venv` first.
+
+### run `python app.py`
+If you don't see "Pinged your deployment. You successfully connected to MongoDB!" in your terminal as a message that you've connected with the backend, try opening a seperate terminal, outside of the project, and run `/Applications/Python\ 3.12/Install\ Certificates.command ; exit;` 
+
+### open a new terminal and cd into frontend
+
+### `npm install`
+
+### `npm run build`
+
+### `npm run start`
+
+### open the http://localhost:3000 in a browswer
+
+
 ### Our backend:
 By default, our app uses a backend hosted online. You can find server/README.md to learn more about our backend and how to run it locally instead.
 
 # How To Use Our Website
+
 
 ## Trends Page
 You can view the trends page by clicking the "Trend" tab on the left.
