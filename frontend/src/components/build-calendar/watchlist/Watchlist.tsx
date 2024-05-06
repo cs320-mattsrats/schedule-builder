@@ -42,6 +42,7 @@ const Watchlist = () => {
 
     const addToCart = (course: TAllCourses) => {
         setCart([...cart, course]);
+        console.log(cart)
     }
 
     return (

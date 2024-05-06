@@ -194,6 +194,14 @@ def scrape_course_schedule_fa2024():
     
     if response.status_code == 200:
         soup = scrape(url)
+        # Example: Extracting all <a> tags
+        links = soup.find_all('a')
+        for link in links:
+            print(link.get('href'))
+
+        # first_option = soup.select_one("#edit-semester-tid > option:first-child")
+        # print('what', first_option)
+
         # Here, you'd write code to parse the specific data you want from the soup object
         # print(soup)
         # For example, let's say you want to get all course titles

@@ -24,6 +24,7 @@ const SearchResults: FC<TNextCourseCard> = ({course, cart, addToCart}) => {
             size='sm'
             colorScheme='blue'
             icon={<SmallAddIcon />}
+            // onChange={addToCart(course)}
         />
       </Box>
     </div>
