@@ -5,7 +5,7 @@ recommendation = Blueprint("recommendation", __name__)
 
 ####################
 
-@recommendation.route("/recommendation/comments<n>", methods = ["GET"])
+@recommendation.route("/recommendation/comments<n>", methods = ["POST"])
 def comments(n):
     return jsonify({
         "test" : n
