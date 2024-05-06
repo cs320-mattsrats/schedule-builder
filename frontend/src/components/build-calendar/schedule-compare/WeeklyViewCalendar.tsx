@@ -42,14 +42,10 @@ const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
               <div key={index} style={{
                 position: 'absolute',
                 top: `${top}px`,
-                left: '10%',
-                width: '80%',
+                width: '100%',
                 height: `${height}px`,
                 backgroundColor: task.color,
                 color: 'white',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
               }}>
                 {`${task.startTime} - ${task.endTime}`}
               </div>
