@@ -9,7 +9,7 @@ import {
 import Course from '@/components/recommendation/Course'
 import Comment from '@/components/recommendation/Comment';
 import './page.css';
-import getRandomCourses from '@/hook/getRandomCourses';
+import {getRandomCourses} from '@/hook/getRandomCourses';
 import { TCourse } from '@/types/courses';
 import axios from 'axios';
 
