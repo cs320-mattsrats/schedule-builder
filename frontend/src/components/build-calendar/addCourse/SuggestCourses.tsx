@@ -9,13 +9,8 @@ import {
     Button
 } from '@chakra-ui/react';
 import { TNextCourseCard } from '../types';
-import { TAllCourses } from '@/types/all_courses';
 
 const SuggestCourses: FC<TNextCourseCard> = ({course, cart, addToCart}) => {
-
-  const add = (value:TAllCourses) => {
-    addToCart(value)
-  }
 
   return (
     <Card>
@@ -28,8 +23,7 @@ const SuggestCourses: FC<TNextCourseCard> = ({course, cart, addToCart}) => {
       <CardFooter>
         <Button 
           variant='ghost' colorScheme='blue' 
-          // onChange={add}
-          // value={course}
+          onClick={() => addToCart(course)}
         >
           Add to cart
         </Button>

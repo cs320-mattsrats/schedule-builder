@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import { 
     Heading, 
     Text, 
@@ -7,8 +7,10 @@ import {
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
 import { TNextCourseCard } from '../types';
+import { TAllCourses } from '@/types/all_courses';
 
 const SearchResults: FC<TNextCourseCard> = ({course, cart, addToCart}) => {
+
   return (
     <div>
       <Box>
@@ -24,7 +26,8 @@ const SearchResults: FC<TNextCourseCard> = ({course, cart, addToCart}) => {
             size='sm'
             colorScheme='blue'
             icon={<SmallAddIcon />}
-            onChange={() => addToCart(course)}
+            // onChange={() => addToCart(course)}
+            onClick={() => addToCart(course)}
         />
       </Box>
     </div>

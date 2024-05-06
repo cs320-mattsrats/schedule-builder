@@ -41,7 +41,9 @@ const Watchlist = () => {
     const [cart, setCart] = useState<TAllCourses[]>([]);
 
     const addToCart = (course: TAllCourses) => {
-        setCart([...cart, course]);
+        // setCart([...cart, course]);
+        setCart((prevCartItems) => [...prevCartItems, course]);
+
         console.log(cart)
     }
 
@@ -57,36 +59,18 @@ const Watchlist = () => {
             />
             </Flex>
             <Wrap spacing={4} alignItems='center'>
-            <WrapItem>
-                <Button colorScheme='gray'>CS311</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='red'>CS501</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='orange'>MATH411</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='yellow'>CHEM111</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='green'>CS230</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='teal'>HIST100</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='blue'>MUSIC150</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='cyan'>CS240</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='purple'>MATH233</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='linkedin'>PHYSIC100</Button>
-            </WrapItem>
+            {cart ? (
+                <>
+                {cart.map((item, index) => (
+                    <WrapItem key={index}>
+                        <Button colorScheme='cyan'>{item.subject}{item.classNumber}</Button>
+                    </WrapItem>
+                ))}
+                </>
+                ): (
+                    <></>
+                )
+            }
             <WrapItem>
                 <IconButton
                 variant='outline'
@@ -117,16 +101,16 @@ const Watchlist = () => {
                         <SearchBar cart = {cart} addToCart = {addToCart}/>
                     </GridItem>
                     <GridItem colSpan={5}>
-                        <SimpleGrid columns={2} spacing={5}>
-                        {rec_courses.map((course, index) => (
-                            <SuggestCourses
-                                key = {index} 
-                                course = {course}
-                                cart = {cart}
-                                addToCart = {addToCart}
-                            />
-                        ))} 
-                        </SimpleGrid>
+                            <SimpleGrid columns={2} spacing={5}>
+                            {rec_courses.map((course, index) => (
+                                <SuggestCourses
+                                    key = {index} 
+                                    course = {course}
+                                    cart = {cart}
+                                    addToCart = {addToCart}
+                                />
+                            ))} 
+                            </SimpleGrid>
                     </GridItem>
                     <GridItem>
                         <Button colorScheme='linkedin' onClick={() => {router.push("/recommendation")}}>Recommendation Page</Button>
