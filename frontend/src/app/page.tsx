@@ -6,7 +6,7 @@ import Course from "@/components/recommendation/Course";
 import { Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Button, Heading, Checkbox, CheckboxGroup } from "@chakra-ui/react";
 import Schedule from '@/components/build-calendar/courseCalendar/Schedule';
 import Requirements from '@/components/homepage/Requirements';
-import getRandomCourses from '@/hook/getRandomCourses';
+import {getRandomCourses} from '@/hook/getRandomCourses';
 import { TCourse } from '@/types/courses';
 import { mock_courses } from '@/mock/courses';
 import axios from 'axios';

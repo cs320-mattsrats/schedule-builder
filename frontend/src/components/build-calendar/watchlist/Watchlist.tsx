@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import {
     Button,
     Wrap,
@@ -22,17 +22,30 @@ import {
     AddIcon,
   } from '@chakra-ui/icons';
 import { SearchBar } from '../addCourse/SearchBar';
-import { mock_courses } from '@/mock/courses';
+import { mock_next_courses } from '@/mock/courses_with_schedule';
 import SuggestCourses from '../addCourse/SuggestCourses';
 import { useRouter } from "next/navigation";
+import SearchResults from '../addCourse/SearchResults';
+import { getRandomScheduleCourses } from '@/hook/getRandomCourses';
+import { TAllCourses } from '@/types/all_courses';
 
 
 const Watchlist = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const initialRef = useRef(null)
     const finalRef = useRef(null);
-  const router = useRouter();
+    const router = useRouter();
 
+    const rec_courses = getRandomScheduleCourses(mock_next_courses, 4);
+
+    const [cart, setCart] = useState<TAllCourses[]>([]);
+
+    const addToCart = (course: TAllCourses) => {
+        // setCart([...cart, course]);
+        setCart((prevCartItems) => [...prevCartItems, course]);
+
+        console.log(cart)
+    }
 
     return (
         <Flex flexDirection={"column"} gap="2">
@@ -46,36 +59,18 @@ const Watchlist = () => {
             />
             </Flex>
             <Wrap spacing={4} alignItems='center'>
-            <WrapItem>
-                <Button colorScheme='gray'>CS311</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='red'>CS501</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='orange'>MATH411</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='yellow'>CHEM111</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='green'>CS230</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='teal'>HIST100</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='blue'>MUSIC150</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='cyan'>CS240</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='purple'>MATH233</Button>
-            </WrapItem>
-            <WrapItem>
-                <Button colorScheme='linkedin'>PHYSIC100</Button>
-            </WrapItem>
+            {cart ? (
+                <>
+                {cart.map((item, index) => (
+                    <WrapItem key={index}>
+                        <Button colorScheme='cyan'>{item.subject}{item.classNumber}</Button>
+                    </WrapItem>
+                ))}
+                </>
+                ): (
+                    <></>
+                )
+            }
             <WrapItem>
                 <IconButton
                 variant='outline'
@@ -101,19 +96,21 @@ const Watchlist = () => {
             <ModalHeader>Search Classes</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
-                <Grid templateColumns='repeat(5, 1fr)' gap={4}>
-                    <GridItem colSpan={3}>
-                        <SearchBar/>
+                <Grid templateColumns='repeat(11, 1fr)' gap={4}>
+                    <GridItem colSpan={6} gap={2}>
+                        <SearchBar cart = {cart} addToCart = {addToCart}/>
                     </GridItem>
-                    <GridItem colSpan={2}>
-                        <SimpleGrid columns={2} spacing={5}>
-                        {mock_courses.map((course, index) => (
-                            <SuggestCourses
-                            key = {index} 
-                            course = {course}
-                            />
-                        ))}
-                        </SimpleGrid>
+                    <GridItem colSpan={5}>
+                            <SimpleGrid columns={2} spacing={5}>
+                            {rec_courses.map((course, index) => (
+                                <SuggestCourses
+                                    key = {index} 
+                                    course = {course}
+                                    cart = {cart}
+                                    addToCart = {addToCart}
+                                />
+                            ))} 
+                            </SimpleGrid>
                     </GridItem>
                     <GridItem>
                         <Button colorScheme='linkedin' onClick={() => {router.push("/recommendation")}}>Recommendation Page</Button>

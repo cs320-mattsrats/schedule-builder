@@ -21,4 +21,5 @@ except Exception as e:
 
 # result = course_collection.insert_many(course_map.values())
 
-# course_map = web.scrape_course_schedule_fa2024()
+course_map = web.scrape_course_schedule_fa2024()
+print(course_map)
