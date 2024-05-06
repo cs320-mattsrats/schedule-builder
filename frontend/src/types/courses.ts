@@ -7,3 +7,14 @@ export type TCourse = {
     description: string;
     professor?: string[];
 }
+
+export interface TaskDictionary {
+    [day: string]: Task[];
+  }
+
+export interface Task {
+    color: string;
+    startTime: string;  // Start time of the task
+    endTime: string;    // End time of the task
+  }
+  
