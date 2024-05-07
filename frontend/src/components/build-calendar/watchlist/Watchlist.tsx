@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {
     Button,
     Wrap,
@@ -41,11 +41,13 @@ const Watchlist = () => {
     const [cart, setCart] = useState<TAllCourses[]>([]);
 
     const addToCart = (course: TAllCourses) => {
-        // setCart([...cart, course]);
         setCart((prevCartItems) => [...prevCartItems, course]);
-
-        console.log(cart)
+        // console.log(cart)
     }
+
+    useEffect(() => {
+        console.log('haha',cart)
+    },[cart]);
 
     return (
         <Flex flexDirection={"column"} gap="2">
@@ -63,7 +65,7 @@ const Watchlist = () => {
                 <>
                 {cart.map((item, index) => (
                     <WrapItem key={index}>
-                        <Button colorScheme='cyan'>{item.subject}{item.classNumber}</Button>
+                        <Button colorScheme='teal'>{item.subject} {item.classNumber}</Button>
                     </WrapItem>
                 ))}
                 </>
