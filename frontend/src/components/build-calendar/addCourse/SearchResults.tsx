@@ -7,7 +7,6 @@ import {
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
 import { TNextCourseCard } from '../types';
-import { TAllCourses } from '@/types/all_courses';
 
 const SearchResults: FC<TNextCourseCard> = ({course, cart, addToCart}) => {
 

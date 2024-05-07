@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, FC } from "react";
+import React, { useState, FC, useEffect } from "react";
 import {
   Button,
   Input,
@@ -20,19 +20,28 @@ import { TAddToCard } from "../types";
 export const SearchBar: FC<TAddToCard> = ({cart, addToCart}) => {
 
   const [wordEntered, setWordEntered] = useState<string>("");
-  const [filteredData, setFilteredData] = useState<TAllCourses[]|null>();
+  const [filteredData, setFilteredData] = useState<TAllCourses[]>([]);
+
+  useEffect(() => {
+    const newFilter = filteredData.filter((value) => {
+      return !cart.includes(value);
+    })
+    setFilteredData(newFilter);
+  }, [cart])
 
   const handleFilter = (e: any) => {
     e.preventDefault();
     const searchWord = e.target.value;
     setWordEntered(searchWord);
     const newFilter = mock_next_courses.filter((value) => {
-      return value.subject.toLowerCase().includes(searchWord.toLowerCase()) 
+      return !cart.includes(value) &&
+      (value.subject.toLowerCase().includes(searchWord.toLowerCase()) 
       || value.classNumber.toLowerCase().includes(searchWord.toLowerCase()) 
-      || value.title.toLowerCase().includes(searchWord.toLowerCase());
+      || value.title.toLowerCase().includes(searchWord.toLowerCase()));
+      
     })
     if (searchWord === "") {
-      setFilteredData(null);
+      setFilteredData([]);
     } else {
       setFilteredData(newFilter);
     }

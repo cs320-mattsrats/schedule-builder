@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {
     Button,
     Wrap,
@@ -41,29 +41,30 @@ const Watchlist = () => {
     const [cart, setCart] = useState<TAllCourses[]>([]);
 
     const addToCart = (course: TAllCourses) => {
-        // setCart([...cart, course]);
         setCart((prevCartItems) => [...prevCartItems, course]);
-
-        console.log(cart)
+        // console.log(cart)
     }
+
+    const removeFromCart = (id: string) => {
+        const updatedCart = cart.filter(product => product.id !== id);
+        setCart(updatedCart);
+      };
+
+    useEffect(() => {
+        console.log('haha',cart)
+    },[cart]);
 
     return (
         <Flex flexDirection={"column"} gap="2">
             <Flex minWidth='max-content' alignItems='center' gap='3' justifyContent={"flex-end"}>
             <Button colorScheme='pink'>Generate</Button>
-            <IconButton
-                variant='outline'
-                colorScheme='black'
-                aria-label='delete'
-                icon={<CloseIcon />}
-            />
             </Flex>
             <Wrap spacing={4} alignItems='center'>
             {cart ? (
                 <>
                 {cart.map((item, index) => (
                     <WrapItem key={index}>
-                        <Button colorScheme='cyan'>{item.subject}{item.classNumber}</Button>
+                        <Button colorScheme='teal' rightIcon={<CloseIcon boxSize={3}/>} onClick={() => removeFromCart(item.id)}>{item.subject} {item.classNumber}</Button>
                     </WrapItem>
                 ))}
                 </>

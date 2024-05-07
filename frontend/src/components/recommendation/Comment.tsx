@@ -1,5 +1,6 @@
-import { 
+import {
     ChakraProvider,
+    Flex,
     Box,
     Button,
     Card,
@@ -15,7 +16,7 @@ import theme from './theme';
 export default function Comment(props:any) {  
     return (
         <ChakraProvider theme={theme}>
-        <Box position="relative" h="20vh" p={12}>
+        <Box z-index={props.zindex} position="relative" transform={props.pos} p={12}>
           <Center>
           <Card >
           <CardHeader>
