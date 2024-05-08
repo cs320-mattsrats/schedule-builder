@@ -71,6 +71,12 @@ This project, Schedule Builder, is a web application that provides an interface 
 
             /public: Folder with logo image
 
+            /services: empty folder
+
+            /test: Testing folder
+            
+                /SearchResults.test.tsx: Tests for serach results
+
             /themes: Folder of of the day adn ngiht componenet
 
             /types: Folder that holds the format of the scraped course data
