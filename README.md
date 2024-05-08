@@ -71,6 +71,12 @@ This project, Schedule Builder, is a web application that provides an interface 
 
             /public: Folder with logo image
 
+            /services: empty folder
+
+            /test: Testing folder
+            
+                /SearchResults.test.tsx: Tests for serach results
+
             /themes: Folder of of the day adn ngiht componenet
 
             /types: Folder that holds the format of the scraped course data
@@ -130,6 +136,8 @@ If you don't see "Pinged your deployment. You successfully connected to MongoDB!
 ### `npm run build`
 
 ### `npm run start`
+### `npm run dev`
+
 
 ### open the http://localhost:3000 in a browser
 
@@ -170,13 +178,17 @@ The Hot Courses sections consists of courses that are usually in demand courses 
 
 The Student Feedback section consists of shape containers with text in them meant to relay feedback from other students about courses. This section is under development as this requires backend integration from either Campuswire, RateMyTeacher, or another source. This section is intended to allow students to see what others have said about different courses to make more informed decisions while picking courses.
 
+# Bugs/Limitations
+
+In it's current state, our scheudle buidler struggles with conflicting schedule times when generating schedules. Additioanlly, there is not databse for student comments, they have been harded coded in. Moreover, when geenrating schedules we had difficulty implementing a no overlapping times algorithm. Login and signup not fuctional.
+
 # Team Member Names:
 
 Hanna Jiang
 
 Joseph Schwab
 
-Kailin Lou
+Kailin Luo
 
 Mary Foley
 
