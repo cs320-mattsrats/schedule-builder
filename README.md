@@ -114,7 +114,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `cd api`
 
-### `for mac users: `. .venv/bin/activate`
+### for Mac users: `. .venv/bin/activate`
 If this command results in an error, run `python3 -m venv .venv` first.
 
 ### for windows users: `.venv\Scripts\activate`
@@ -130,6 +130,8 @@ If you don't see "Pinged your deployment. You successfully connected to MongoDB!
 ### `npm run build`
 
 ### `npm run start`
+### `npm run dev`
+
 
 ### open the http://localhost:3000 in a browswer
 
