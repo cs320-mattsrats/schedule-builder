@@ -1566,26 +1566,106 @@ export const mock_next_courses: TAllCourses[] = [
             instructor: "Rozpedek"
         }
         ]
-    }, 
+    },
     {
         id: "36",
-        subject: "COMPSCI",
-        classNumber: "700",
-        title: 'Secure Distributed Systems Three',
+        subject: "MATH",
+        classNumber: "131",
+        title: "Calculus I",
         section: [
         {
             id: "LEC01",
-            day: ["Mon", "Wed"],
-            starttime: "10:10 AM",
-            endtime: "11:25 AM",
-            location: "CS 140",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "12:20 PM",
+            endtime: "01:10 PM",
+            location: "GsmnAdd 151",
+            instructor: "Staff",
             lab: [
                 {
                     id: "DIS01AA",
                     day: ["Tue"],
                     starttime: "02:30 PM",
-                    endtime: "03:45 PM",
-                    location: "CompSci140"
+                    endtime: "03:20 PM",
+                    location: "LederT 147"
+                },
+                {
+                    id: "DIS01AB",
+                    day: ["Tue"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 147"
+                }
+            ]
+        },
+        {
+            id: "LEC02",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "11:15 AM",
+            endtime: "12:05 PM",
+            location: "GsmnAdd 151",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS02AA",
+                    day: ["Thu"],
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 147"
+                },
+                {
+                    id: "DIS02AB",
+                    day: ["Tue"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 147"
+                }
+            ]
+        },
+        {
+            id: "LEC03",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "01:25 PM",
+            endtime: "02:15 PM",
+            location: "GsmnAdd 151",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS03AA",
+                    day: ["Thu"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 171"
+                },
+                {
+                    id: "DIS03AB",
+                    day: ["Thu"],
+                    starttime: "01:00 PM",
+                    endtime: "01:50 PM",
+                    location: "LederT 171"
+                }
+            ]
+        },
+        {
+            id: "LEC04",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "02:30 PM",
+            endtime: "03:45 PM",
+            location: "GsmnAdd 151",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS04AA",
+                    day: ["Fri"],
+                    starttime: "12:20 PM",
+                    endtime: "01:10 PM",
+                    location: "LederT 147"
+                },
+                {
+                    id: "DIS04AB",
+                    day: ["Fri"],
+                    starttime: "01:25 PM",
+                    endtime: "02:15 PM",
+                    location: "LederT 147"
                 }
             ]
         }
@@ -1593,34 +1673,266 @@ export const mock_next_courses: TAllCourses[] = [
     },
     {
         id: "37",
-        subject: "COMPSCI",
-        classNumber: "720",
-        title: 'Secure Distributed Systems Four',
+        subject: "MATH",
+        classNumber: "132",
+        title: "Calculus II",
         section: [
         {
             id: "LEC01",
-            day: ["Tue", "Thurs"],
-            starttime: "10:10 AM",
-            endtime: "11:25 AM",
-            location: "CS 140",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "09:05 AM",
+            endtime: "09:55 AM",
+            location: "LederT 123",
+            instructor: "Staff",
             lab: [
                 {
                     id: "DIS01AA",
                     day: ["Tue"],
-                    starttime: "02:30 PM",
-                    endtime: "03:45 PM",
-                    location: "CompSci140"
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 145"
                 },
+                {
+                    id: "DIS01AB",
+                    day: ["Tue"],
+                    starttime: "02:30 PM",
+                    endtime: "03:20 PM",
+                    location: "LederT 143"
+                }
+            ]
+        },
+        {
+            id: "LEC02",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "10:10 AM",
+            endtime: "11:00 AM",
+            location: "GsmnAdd 51",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS02AA",
+                    day: ["Tue"],
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 147"
+                },
+                {
+                    id: "DIS02AB",
+                    day: ["Tue"],
+                    starttime: "08:30 AM",
+                    endtime: "09:20 PM",
+                    location: "LederT 147"
+                }
+            ]
+        },
+        {
+            id: "LEC03",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "11:15 AM",
+            endtime: "12:05 PM",
+            location: "GsmnAdd 152",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS03AA",
+                    day: ["Tue"],
+                    starttime: "02:30 PM",
+                    endtime: "03:20 PM",
+                    location: "LederT 141"
+                },
+                {
+                    id: "DIS03AB",
+                    day: ["Tue"],
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 143"
+                }
+            ]
+        },
+        {
+            id: "LEC04",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "12:20 PM",
+            endtime: "01:10 PM",
+            location: "GsmnAdd 152",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS04AA",
+                    day: ["Thu"],
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 143"
+                },
+                {
+                    id: "DIS04AB",
+                    day: ["Thu"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 143"
+                }
+            ]
+        }
+        ]
+    },
+    {
+        id: "38",
+        subject: "MATH",
+        classNumber: "233",
+        title: "Multivariate Calculus",
+        section: [
+        {
+            id: "LEC01",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "09:05 AM",
+            endtime: "09:55 AM",
+            location: "LederT 121",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS01AA",
+                    day: ["Tue"],
+                    starttime: "08:30 AM",
+                    endtime: "09:20 AM",
+                    location: "LederT 171"
+                },
+                {
+                    id: "DIS01AB",
+                    day: ["Tue"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 141"
+                }
+            ]
+        },
+        {
+            id: "LEC02",
+            day: ["Tue", "Thu"],
+            starttime: "10:00 AM",
+            endtime: "11:15 AM",
+            location: "LederT 219",
+            instructor: "Maria Nikolaou",
+            lab: [
                 {
                     id: "DIS02AA",
                     day: ["Wed"],
-                    starttime: "02:30 PM",
-                    endtime: "03:45 PM",
-                    location: "CompSci140"
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 145"
+                },
+                {
+                    id: "DIS02AB",
+                    day: ["Wed"],
+                    starttime: "05:30 AM",
+                    endtime: "06:20 PM",
+                    location: "LederT 204"
                 }
             ]
-
+        },
+        {
+            id: "LEC03",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "01:25 PM",
+            endtime: "02:15 PM",
+            location: "GsmnAdd 152",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS03AA",
+                    day: ["Tue"],
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 173"
+                },
+                {
+                    id: "DIS03AB",
+                    day: ["Tue"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 173"
+                }
+            ]
+        },
+        {
+            id: "LEC04",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "12:20 PM",
+            endtime: "01:10 PM",
+            location: "LederCA301",
+            instructor: "Staff",
+            lab: [
+                {
+                    id: "DIS04AA",
+                    day: ["Thu"],
+                    starttime: "04:00 PM",
+                    endtime: "04:50 PM",
+                    location: "LederT 202"
+                },
+                {
+                    id: "DIS04AB",
+                    day: ["Thu"],
+                    starttime: "05:30 PM",
+                    endtime: "06:20 PM",
+                    location: "LederT 202"
+                }
+            ]
         }
         ]
-    }            
+    },
+    {
+        id: "39",
+        subject: "MATH",
+        classNumber: "235",
+        title: "Introduction to Linear Algebra",
+        section: [
+        {
+            id: "LEC01",
+            day: ["Tue", "Thu"],
+            starttime: "08:30 AM",
+            endtime: "09:45 AM",
+            location: "AgEngin119",
+            instructor: "Staff"
+        },
+        {
+            id: "LEC02",
+            day: ["Tue", "Thu"],
+            starttime: "01:00 PM",
+            endtime: "02:15 PM",
+            location: "GsmnAdd 151",
+            instructor: "Staff"
+        },
+        {
+            id: "LEC03",
+            day: ["Tue", "Thu"],
+            starttime: "02:30 PM",
+            endtime: "03:45 PM",
+            location: "GsmnAdd 152",
+            instructor: "Staff"
+        },
+        {
+            id: "LEC04",
+            day: ["Tue", "Thu"],
+            starttime: "10:00 AM",
+            endtime: "11:15 AM",
+            location: "LederT 121",
+            instructor: "Staff"
+        },
+        {
+            id: "LEC05",
+            day: ["Tue", "Thu"],
+            starttime: "04:00 PM",
+            endtime: "05:15 PM",
+            location: "GsmnAdd 152",
+            instructor: "Staff"
+        },
+        {
+            id: "LEC06",
+            day: ["Tue", "Thu"],
+            starttime: "11:30 AM",
+            endtime: "12:45 PM",
+            location: "GsmnAdd 51",
+            instructor: "Staff"
+        }
+        ]
+    }   
 ] 
