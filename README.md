@@ -175,7 +175,7 @@ The Student Feedback section consists of shape containers with text in them mean
 
 # Bugs/Limitations
 
-In it's current state, our scheudle buidler struggles with conflicting schedule times when generating schedules. Additioanlly, there is not databse for student comments, they have been harded coded in.
+In it's current state, our scheudle buidler struggles with conflicting schedule times when generating schedules. Additioanlly, there is not databse for student comments, they have been harded coded in. Moreover, when geenrating schedules we had difficulty implementing a no overlapping times algorithm.
 
 # Team Member Names:
 
