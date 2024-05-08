@@ -1566,5 +1566,61 @@ export const mock_next_courses: TAllCourses[] = [
             instructor: "Rozpedek"
         }
         ]
-    }        
+    }, 
+    {
+        id: "36",
+        subject: "COMPSCI",
+        classNumber: "700",
+        title: 'Secure Distributed Systems Three',
+        section: [
+        {
+            id: "LEC01",
+            day: ["Mon", "Wed"],
+            starttime: "10:10 AM",
+            endtime: "11:25 AM",
+            location: "CS 140",
+            lab: [
+                {
+                    id: "DIS01AA",
+                    day: ["Tue"],
+                    starttime: "02:30 PM",
+                    endtime: "03:45 PM",
+                    location: "CompSci140"
+                }
+            ]
+        }
+        ]
+    },
+    {
+        id: "37",
+        subject: "COMPSCI",
+        classNumber: "720",
+        title: 'Secure Distributed Systems Four',
+        section: [
+        {
+            id: "LEC01",
+            day: ["Tue", "Thurs"],
+            starttime: "10:10 AM",
+            endtime: "11:25 AM",
+            location: "CS 140",
+            lab: [
+                {
+                    id: "DIS01AA",
+                    day: ["Tue"],
+                    starttime: "02:30 PM",
+                    endtime: "03:45 PM",
+                    location: "CompSci140"
+                },
+                {
+                    id: "DIS02AA",
+                    day: ["Wed"],
+                    starttime: "02:30 PM",
+                    endtime: "03:45 PM",
+                    location: "CompSci140"
+                }
+            ]
+
+        }
+        ]
+    }            
 ] 

@@ -29,7 +29,7 @@ import SearchResults from '../addCourse/SearchResults';
 import { getRandomScheduleCourses } from '@/hook/getRandomCourses';
 import { TAllCourses } from '@/types/all_courses';
 
-
+import { generateSchedules } from '@/hook/generateSchedule';
 const Watchlist = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const initialRef = useRef(null)
@@ -53,11 +53,14 @@ const Watchlist = () => {
     useEffect(() => {
         console.log('haha',cart)
     },[cart]);
+    const generateScheduless = ()=>{
+        console.log('ok', generateSchedules(cart))
+    }
 
     return (
         <Flex flexDirection={"column"} gap="2">
             <Flex minWidth='max-content' alignItems='center' gap='3' justifyContent={"flex-end"}>
-            <Button colorScheme='pink'>Generate</Button>
+            <Button colorScheme='pink' onClick={() => generateScheduless()}>Generate</Button>
             </Flex>
             <Wrap spacing={4} alignItems='center'>
             {cart ? (
