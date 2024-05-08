@@ -5,7 +5,6 @@ interface TimeSlot {
     endTime: string;
 }
 function convertToDateTime(day: string, time: string): Date {
-    // Assuming time is in "HH:MM AM/PM" format
     const [hours, minutesPart] = time.split(':');
     const minutes = minutesPart.substring(0, 2);
     const ampm = minutesPart.substring(3);
@@ -17,7 +16,6 @@ function convertToDateTime(day: string, time: string): Date {
 }
 
 function isConflict(slot1: TimeSlot, slot2: TimeSlot): boolean {
-    // Simplified conflict checking, assuming all time slots are in the same week
     const start1 = convertToDateTime(slot1.day, slot1.startTime);
     const end1 = convertToDateTime(slot1.day, slot1.endTime);
     const start2 = convertToDateTime(slot2.day, slot2.startTime);
@@ -36,42 +34,60 @@ export function generateSchedules(courses: TAllCourses[]): TAllCourses[][] {
         }
 
         const course = courses[courseIndex];
-        if (!course.section) return;  // Ensure that course has sections
+        if (!course.section) return;
 
+        sectionLoop:
         for (const section of course.section) {
-            let sectionConflict = false;
-            const sectionTimes: TimeSlot[] = section.day.map(day => ({
+            const sectionTimeSlots: TimeSlot[] = section.day.map(day => ({
                 day: day,
                 startTime: section.starttime,
                 endTime: section.endtime
             }));
 
-            // Check for conflict with currently scheduled courses
-            for (const cs of currentSchedule) {
-                for (const csSection of cs.section || []) {
-                    for (const csSectionTime of csSection.day.map(day => ({
-                        day: day,
-                        startTime: csSection.starttime,
-                        endTime: csSection.endtime
-                    }))) {
-                        if (sectionTimes.some(st => isConflict(st, csSectionTime))) {
-                            sectionConflict = true;
-                            break;
-                        }
-                    }
-                    if (sectionConflict) break;
-                }
-                if (sectionConflict) break;
-            }
-
-            if (!sectionConflict) {
+            if (!section.lab || section.lab.length === 0) {
+                // Handle sections without labs
+                if (checkConflict(sectionTimeSlots)) continue sectionLoop;
                 currentSchedule.push({...course, section: [section]});
                 scheduleCourses(courseIndex + 1);
                 currentSchedule.pop();
+            } else {
+                // Handle sections with labs
+                for (const lab of section.lab) {
+                    const labTimeSlots: TimeSlot[] = lab.day.map(day => ({
+                        day: day,
+                        startTime: lab.starttime,
+                        endTime: lab.endtime
+                    }));
+                    
+                    if (checkConflict(sectionTimeSlots.concat(labTimeSlots))) continue;
+                    
+                    currentSchedule.push({...course, section: [{...section, lab: [lab]}]});
+                    scheduleCourses(courseIndex + 1);
+                    currentSchedule.pop();
+                }
             }
         }
     }
 
+    function checkConflict(timeSlots: TimeSlot[]): boolean {
+        // Check all times in the current schedule for conflicts
+        return currentSchedule.some(scheduledCourse =>
+            scheduledCourse.section?.some(scheduledSection =>
+                scheduledSection.day.map(day => ({
+                    day: day,
+                    startTime: scheduledSection.starttime,
+                    endTime: scheduledSection.endtime
+                })).concat(scheduledSection.lab?.flatMap(lab => lab.day.map(day => ({
+                    day: day,
+                    startTime: lab.starttime,
+                    endTime: lab.endtime
+                }))) || []).some(existingTimeSlot =>
+                    timeSlots.some(timeSlot => isConflict(timeSlot, existingTimeSlot))
+                )
+            )
+        );
+    }
+
     scheduleCourses(0);
     return validSchedules;
-}
+}                    

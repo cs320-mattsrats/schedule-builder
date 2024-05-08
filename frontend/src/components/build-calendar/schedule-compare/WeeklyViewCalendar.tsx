@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Table, TableCaption, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
 
 import { Task } from '@/types/courses';
-import { TaskDictionary } from '@/types/courses';
+import { TaskDictionary } from '@/types/courses'
+
 
 interface WeeklyPlannerProps {
   tasks: TaskDictionary;

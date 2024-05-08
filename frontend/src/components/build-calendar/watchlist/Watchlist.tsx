@@ -28,8 +28,8 @@ import { useRouter } from "next/navigation";
 import SearchResults from '../addCourse/SearchResults';
 import { getRandomScheduleCourses } from '@/hook/getRandomCourses';
 import { TAllCourses } from '@/types/all_courses';
-import { generateSchedules } from '@/hook/generateSchedule';
 
+import { generateSchedules } from '@/hook/generateSchedule';
 const Watchlist = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const initialRef = useRef(null)
@@ -50,9 +50,12 @@ const Watchlist = () => {
         setCart(updatedCart);
       };
 
-    useEffect(() => {
-        console.log('haha',cart)
-    },[cart]);
+    // useEffect(() => {
+    //     console.log('haha',cart)
+    // },[cart]);
+    const generateScheduless = ()=>{
+        console.log('ok', generateSchedules(cart))
+    }
 
     const generateSchedule = () => {
         const res = generateSchedules(cart)
@@ -62,7 +65,7 @@ const Watchlist = () => {
     return (
         <Flex flexDirection={"column"} gap="2">
             <Flex minWidth='max-content' alignItems='center' gap='3' justifyContent={"flex-end"}>
-            <Button colorScheme='pink' onClick={() => generateSchedules(cart)}>Generate</Button>
+            <Button colorScheme='pink' onClick={() => generateScheduless()}>Generate</Button>
             </Flex>
             <Wrap spacing={4} alignItems='center'>
             {cart ? (
