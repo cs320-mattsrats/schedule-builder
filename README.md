@@ -116,6 +116,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### for windows users: `.venv\Scripts\activate`
 
+### `pip install Flask`
+
 ### run `python app.py`
 If you don't see "Pinged your deployment. You successfully connected to MongoDB!" in your terminal as a message that you've connected with the backend, try opening a seperate terminal, outside of the project, and run `/Applications/Python\ 3.12/Install\ Certificates.command ; exit;` 
 
