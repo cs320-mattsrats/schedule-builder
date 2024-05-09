@@ -114,28 +114,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `cd api`
 
-### `for mac users: `python3 -m venv .venv`
-
-### `for mac users: `. .venv/bin/activate`
-
-### for windows users: `py -3 -m venv .venv`
+### for Mac users: `. .venv/bin/activate`
+If this command results in an error, run `python3 -m venv .venv` first.
 
 ### for windows users: `.venv\Scripts\activate`
 
-### `pip install Flask`
+If there are errors, 'pip install ...' dependencies
 
-### `pip install html5lib`
+### run `python app.py`
 
-### run `flask run`
-If you don't see "Pinged your deployment. You successfully connected to MongoDB!" in your terminal as a message that you've connected with the backend, try opening a seperate terminal, outside of the project, and run `/Applications/Python\ 3.12/Install\ Certificates.command ; exit;` 
-
-### open a new terminal and cd into frontend
+### open a new terminal, cd frontend
 
 ### `npm install`
 
 ### `npm run build`
 
-### `npm run start`
 ### `npm run dev`
 
 
