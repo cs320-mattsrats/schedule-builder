@@ -3,7 +3,8 @@
 import React, {useState, useEffect} from 'react'; 
 import Layout from "@/components/layout/Layout";
 import {
-  Text, SimpleGrid, Flex
+  Text, SimpleGrid, Flex,
+  Textarea
 } from "@chakra-ui/react";
 
 import Course from '@/components/recommendation/Course'
@@ -151,16 +152,18 @@ export default function Recommendation() {
           >
             Student Feedback
           </Text>
+          <Textarea placeholder='Post a comment about this course!'>
+          </Textarea>
           <Flex>
-          <Comment pos="translate(-100px,-10px)" color = "lightblue" comment="Marius is the coolest!" course="CS311">
+          <Comment comment="Marius is the coolest!" course="CS311">
           </Comment>
           <div></div>
-          <Comment pos="translate(-100px,-10px)" color = "lavender" comment="best class ever!" course="CS311">
+          <Comment comment="best class ever!" course="CS311">
           </Comment>
-          <Comment pos="translate(-100px,-10px)" color = "lightblue" comment="Lots of office hours, covers a lot of material" course="CS311">
+          <Comment comment="Lots of office hours, covers a lot of material" course="CS311">
           </Comment>
           <div></div>
-          <Comment pos="translate(-100px,-10px)" color = "lavender" comment="lecture heavy course" course="CS311">
+          <Comment comment="lecture heavy course" course="CS311">
           </Comment>
           </Flex>
       </div>
