@@ -1,14 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
-# from calendar_blueprint import calendar
+from calendar_blueprint import calendar
 from database import db
 
 app = Flask(__name__)
+CORS(app)
 
 collection = db["courses"]
 
-# app.register_blueprint(calendar)
-CORS(app)
+app.register_blueprint(calendar)
+
 @app.route('/')
 def index():
     return 'Hello, Flask!'
@@ -30,4 +31,4 @@ def get_courses():
     return jsonify({'data': data})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
