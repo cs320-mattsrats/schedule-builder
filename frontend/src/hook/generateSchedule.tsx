@@ -89,5 +89,5 @@ export function generateSchedules(courses: TAllCourses[]): TAllCourses[][] {
     }
 
     scheduleCourses(0);
-    return validSchedules;
+    return validSchedules.slice(0,3);
 }                    

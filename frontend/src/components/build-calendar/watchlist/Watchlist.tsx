@@ -50,16 +50,8 @@ const Watchlist = () => {
         setCart(updatedCart);
       };
 
-    // useEffect(() => {
-    //     console.log('haha',cart)
-    // },[cart]);
-    const generateScheduless = ()=>{
+    const generateScheduless = () => {
         console.log('ok', generateSchedules(cart))
-    }
-
-    const generateSchedule = () => {
-        const res = generateSchedules(cart)
-        console.log
     }
 
     return (

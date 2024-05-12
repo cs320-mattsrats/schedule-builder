@@ -9,13 +9,16 @@ import {
     ModalCloseButton,
     Button,
     useDisclosure,
+    Card,
   } from '@chakra-ui/react'
 
   export default function CourseDescription(props: any) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
       <>
-        <Button size="xs" onClick={onOpen}>View Details</Button>
+        <Card maxW='sm'>
+            <Button size="md" onClick={onOpen} variant='ghost'>CS320</Button>
+        </Card>
   
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
