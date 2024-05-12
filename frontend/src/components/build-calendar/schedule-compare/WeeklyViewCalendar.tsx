@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Table, TableCaption, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
 
 import { Task } from '@/types/courses';
-import { TaskDictionary } from '@/types/courses'
-
+import { TaskDictionary } from '@/types/courses';
+import CourseDescription from './CourseDescription';
 
 interface WeeklyPlannerProps {
   tasks: TaskDictionary;
@@ -48,6 +48,7 @@ const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
                 color: 'white',
               }}>
                 {`${task.startTime} - ${task.endTime}`}
+                <CourseDescription/>
               </div>
             );
           })}
