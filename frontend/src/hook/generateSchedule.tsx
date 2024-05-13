@@ -1,10 +1,11 @@
 import { TAllCourses } from "@/types/all_courses";
+
 interface TimeSlot {
     day: string;
     startTime: string;
     endTime: string;
 }
-function convertToDateTime(day: string, time: string): Date {
+export function convertToDateTime(day: string, time: string): Date {
     const [hours, minutesPart] = time.split(':');
     const minutes = minutesPart.substring(0, 2);
     const ampm = minutesPart.substring(3);
@@ -89,5 +90,5 @@ export function generateSchedules(courses: TAllCourses[]): TAllCourses[][] {
     }
 
     scheduleCourses(0);
-    return validSchedules.slice(0,3);
+    return Array.from({ length: 3 }, () => validSchedules[Math.floor(Math.random() * validSchedules.length)]);;
 }                    
