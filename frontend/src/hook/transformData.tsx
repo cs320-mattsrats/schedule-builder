@@ -18,7 +18,7 @@ function convertTimeFormat(timeString: string): string {
     return `${formattedHours}:${formattedMinutes}`;
 }
 
-const colors = ['red', 'gray', 'orange', 'yellow', 'green', 'teal', 'cyan', 'purple', 'pink', 'whiteAlpha', 'blackAlpha'];
+const colors = ['red', 'gray', 'orange', 'yellow', 'green', 'teal', 'cyan', 'purple', 'pink'];
 
 function getRandomColor(): string {
     const randomIndex = Math.floor(Math.random() * colors.length);
@@ -50,7 +50,7 @@ export default function transformData(data: TAllCourses[][]): TaskDictionary[] {
                       endTime: convertTimeFormat(s.endtime),
                       location: s.location,
                       instructor: s.instructor,
-                      color: 'black'
+                      color: courseColor
                     });
                 });
                 if (s.lab) {
