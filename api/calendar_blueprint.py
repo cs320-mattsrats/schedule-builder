@@ -5,10 +5,10 @@ calendar = Blueprint("calendar", __name__)
 
 collection = db['all-schedules']
 
-@calendar.route("/getdata", methods = ["GET"])
-def retrieve_data():
-    data = collection.find()
-    return jsonify(data)
+# @calendar.route("/getdata", methods = ["GET"])
+# def retrieve_data():
+#     data = collection.find()
+#     return jsonify(data)
 
 @calendar.route("/post-schedule", methods = ["POST"])
 def post_schedule():
