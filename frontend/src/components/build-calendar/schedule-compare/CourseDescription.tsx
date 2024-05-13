@@ -1,46 +1,20 @@
-'use client';
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    Button,
-    useDisclosure,
-    Card,
-  } from '@chakra-ui/react'
+import { Popover, PopoverTrigger, PopoverContent, Box, Text } from '@chakra-ui/react';
 
-  export default function CourseDescription(props: any) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    return (
-      <>
-        <Card maxW='sm'>
-            <Button size="md" onClick={onOpen} variant='ghost'>CS320</Button>
-        </Card>
-  
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>courseTitle</ModalHeader>
-            <ModalCloseButton />
+interface CourseDescriptionProps {
+  courseInfo: string;  // Adjust based on what info you want to show
+}
 
-            <ModalBody>
-                <strong>Course Description:</strong> Description
-            </ModalBody>
+const CourseDescription: React.FC<CourseDescriptionProps> = ({ courseInfo }) => (
+  <Popover placement="right" trigger="hover">
+    <PopoverTrigger>
+      <Box>
+        <Text>Details</Text>
+      </Box>
+    </PopoverTrigger>
+    <PopoverContent p={4}>
+      <Text>{courseInfo}</Text>
+    </PopoverContent>
+  </Popover>
+);
 
-            <ModalBody>
-              <strong>Meeting Times:</strong> Times
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    )
-  }
+export default CourseDescription;

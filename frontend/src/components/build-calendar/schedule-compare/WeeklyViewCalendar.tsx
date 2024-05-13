@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconButton } from '@chakra-ui/react';
+import { IconButton, Box, Text } from '@chakra-ui/react';
 import { CalendarIcon } from '@chakra-ui/icons';
 
 import { Task } from '@/types/courses';
@@ -33,26 +33,22 @@ const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
   // Function to generate time slots from 8 am to 7 pm
   return (
-    <div style={{ width:'500px',display: 'flex', height: '540px', border: '1px solid #ccc', borderRadius: '10px'}}> {/* 540px = 9 hours * 60px per hour */}
+    <Box width="100%" display="flex" height="540px" border="1px solid #ccc">
       {days.map(day => (
-        <div key={day} style={{ flex: 1, margin: '5px', position: 'relative' }}>
+        <Box key={day} flex="1" m="5px" position="relative">
           <div>{day}</div>
           {tasks[day]?.map((task, index) => {
             const { top, height } = timeToPosition(task.startTime, task.endTime);
             return (
-              <div key={index} style={{
-                position: 'absolute',
-                top: `${top}px`,
-                height: `${height}px`,
-                // backgroundColor: task.color,
-                // color: 'white',
-              }}>
-                <CourseDescription/>
-              </div>
-            );
-          })}
-        </div>
-      ))}
+              <Box key={index} position="absolute" top={`${top}px`} width="100%" height={`${height}px`} bg={task.color} color="white">
+              <Text>{`${task.startTime} - ${task.endTime}`}</Text>
+              <CourseDescription courseInfo={`Starts: ${task.startTime}, Ends: ${task.endTime}, Color: ${task.color}`} />
+            </Box>
+          );
+        })}
+      </Box>
+    ))}
+  
       <div style={{  bottom:'0px'}}>
       <IconButton
             // variant='outline'
@@ -62,7 +58,7 @@ const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
             icon={<CalendarIcon />}
         />
       </div>
-    </div>
+    </Box>
   );
 }
 export default WeeklyViewCalendar;
