@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState, FC} from 'react'
 import {
     Button,
     Wrap,
@@ -25,13 +25,13 @@ import { SearchBar } from '../addCourse/SearchBar';
 import { mock_next_courses } from '@/mock/courses_with_schedule';
 import SuggestCourses from '../addCourse/SuggestCourses';
 import { useRouter } from "next/navigation";
-import SearchResults from '../addCourse/SearchResults';
-import axios from 'axios';
 import { getRandomScheduleCourses } from '@/hook/getRandomCourses';
 import { TAllCourses } from '@/types/all_courses';
 
 import { generateSchedules } from '@/hook/generateSchedule';
-const Watchlist = () => {
+import { TPressed } from '../types';
+
+const Watchlist: FC<TPressed> = ({pressed, toggle}) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const initialRef = useRef(null)
     const finalRef = useRef(null);
@@ -51,10 +51,6 @@ const Watchlist = () => {
         setCart(updatedCart);
       };
 
-    const generateScheduless = () => {
-        console.log('ok', generateSchedules(cart))
-    }
-
     const postSchedule = async () => {
         // e.preventDefault();
         
@@ -69,6 +65,7 @@ const Watchlist = () => {
             
             const responseData = await response.json();
             console.log(responseData); // Handle the response data as needed
+            toggle();
         } catch (error) {
             console.error('Error:', error);
             // Handle error

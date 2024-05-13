@@ -1,4 +1,6 @@
 'use client';
+import { Task } from '@/types/courses';
+import {FC} from 'react';
 import {
     Modal,
     ModalOverlay,
@@ -11,27 +13,33 @@ import {
     useDisclosure,
     Card,
   } from '@chakra-ui/react'
+import { TClassBtn } from '../types';
 
-  export default function CourseDescription(props: any) {
+  const CourseDescription: FC<TClassBtn> = ({task}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    console.log('color2', task)
     return (
       <>
         <Card maxW='sm'>
-            <Button size="md" onClick={onOpen} variant='ghost'>CS320</Button>
+            <Button size="md" onClick={onOpen} colorScheme={task.color}>{task.subject}{task.classNumber}</Button>
         </Card>
   
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>courseTitle</ModalHeader>
+            <ModalHeader>{task.subject} {task.classNumber} : {task.title}</ModalHeader>
             <ModalCloseButton />
 
             <ModalBody>
-                <strong>Course Description:</strong> Description
+                <strong>Instructor:</strong> {task.instructor}
             </ModalBody>
 
             <ModalBody>
-              <strong>Meeting Times:</strong> Times
+              <strong>Meeting Times:</strong> {task.startTime} - {task.endTime}
+            </ModalBody>
+
+            <ModalBody>
+              <strong>Locations</strong> {task.location}
             </ModalBody>
   
             <ModalFooter>
@@ -44,3 +52,5 @@ import {
       </>
     )
   }
+
+export default CourseDescription;
