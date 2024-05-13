@@ -22,6 +22,9 @@ const VSchedule: React.FC = () => {
   return (
     <div style={{ display: 'flex', overflowX: 'auto', gap: '10px' }}>
       <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
+      <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
+      <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
+      <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
     </div>
   )
 }

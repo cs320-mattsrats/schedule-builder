@@ -26,6 +26,7 @@ import { mock_next_courses } from '@/mock/courses_with_schedule';
 import SuggestCourses from '../addCourse/SuggestCourses';
 import { useRouter } from "next/navigation";
 import SearchResults from '../addCourse/SearchResults';
+import axios from 'axios';
 import { getRandomScheduleCourses } from '@/hook/getRandomCourses';
 import { TAllCourses } from '@/types/all_courses';
 
@@ -54,10 +55,30 @@ const Watchlist = () => {
         console.log('ok', generateSchedules(cart))
     }
 
+    const postSchedule = async () => {
+        // e.preventDefault();
+        
+        try {
+            const response = await fetch('http://localhost:8080//post-schedule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ data: generateSchedules(cart) }), // Assuming you want to send the input value in JSON format
+            });
+            
+            const responseData = await response.json();
+            console.log(responseData); // Handle the response data as needed
+        } catch (error) {
+            console.error('Error:', error);
+            // Handle error
+        }
+    };
+
     return (
         <Flex flexDirection={"column"} gap="2">
             <Flex minWidth='max-content' alignItems='center' gap='3' justifyContent={"flex-end"}>
-            <Button colorScheme='pink' onClick={() => generateScheduless()}>Generate</Button>
+            <Button colorScheme='pink' onClick={() => postSchedule()}>Generate</Button>
             </Flex>
             <Wrap spacing={4} alignItems='center'>
             {cart ? (

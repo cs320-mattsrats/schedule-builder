@@ -17,7 +17,7 @@ export default function Home() {
 
   const getCourses = async () => {
     await axios
-      .get('http://127.0.0.1:5000/courses')
+      .get('http://127.0.0.1:8080/courses')
       .then(response => {
         setCourses(getRandomCourses(response.data.data,5))
         console.log(response.data.data)
