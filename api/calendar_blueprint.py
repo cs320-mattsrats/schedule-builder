@@ -21,6 +21,7 @@ def retrieve_data():
                 'classNumber': document['classNumber'],
                 'title': document['title'],
                 'section': document['section'],
+                'color': document['color'],
             })
         res.append(data)
 
