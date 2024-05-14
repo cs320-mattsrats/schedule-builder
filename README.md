@@ -105,12 +105,7 @@ To install all dependencies for the project, you can run:
 
 ### `npm install`
 
-To start the application, you can run:
-
-### `npm start`
-
-This command runs our app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To start the application:
 
 ### `cd api`
 
