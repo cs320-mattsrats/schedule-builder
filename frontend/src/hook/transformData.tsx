@@ -33,7 +33,7 @@ export default function transformData(data: TAllCourses[][]): TaskDictionary[] {
     data.forEach((courses) => {
         const taskDictionary: TaskDictionary = {};
         courses.forEach((course) => {
-            const courseColor = getRandomColor();
+            // const courseColor = getRandomColor();
 
             course.section.forEach((s) => {
                 s.day.forEach((day) => {
@@ -50,7 +50,7 @@ export default function transformData(data: TAllCourses[][]): TaskDictionary[] {
                       endTime: convertTimeFormat(s.endtime),
                       location: s.location,
                       instructor: s.instructor,
-                      color: courseColor
+                      color: course.color
                     });
                 });
                 if (s.lab) {
@@ -69,7 +69,7 @@ export default function transformData(data: TAllCourses[][]): TaskDictionary[] {
                               endTime: convertTimeFormat(l.endtime),
                               location: l.location,
                               instructor: s.instructor,
-                              color: courseColor
+                              color: course.color
                             });
                         }); 
                     })
