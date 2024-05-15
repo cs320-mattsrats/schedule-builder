@@ -17,7 +17,6 @@ import { TClassBtn } from '../types';
 
   const CourseDescription: FC<TClassBtn> = ({task}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    console.log('color2', task)
     return (
       <>
         <Card maxW='sm'>

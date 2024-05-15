@@ -1934,5 +1934,906 @@ export const mock_next_courses: TAllCourses[] = [
             instructor: "Staff"
         }
         ]
-    }   
+    },
+    {
+        id: "1",
+        classNumber: "131",
+        subject: "PHY",
+        title: "Intro Physics I",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "08:00 AM",
+                endtime: "08:50 AM",
+                location: "ICL S110",
+                instructor: "Paul Bourgeois",
+                lab: [
+                    {
+                        id: "LAB01",
+                        day: ["Tue"],
+                        starttime: "8:50 AM",
+                        endtime: "09:45 AM",
+                        location: "HAS 20"
+                    }
+                ]
+            },
+            {
+                id: "LEC02",
+                day: ["Mon", "Wed"],
+                starttime: "09:05 AM",
+                endtime: "09:55 AM",
+                location: "ICL S110",
+                instructor: "Paul Bourgeois",
+                lab: [
+                {
+                    id: "LAB02",
+                    day: ["Tue"],
+                    starttime: "08:50 AM",
+                    endtime: "09:45 AM",
+                    location: "HAS 20"
+                }
+                ]
+            },
+            {
+                id: "LEC03",
+                day: ["Mon", "Wed"],
+                starttime: "10:10 AM",
+                endtime: "11:00 AM",
+                location: "ICL S110",
+                instructor: "Brokk Toggerson",
+                lab: [
+                {
+                    id: "LAB03",
+                    day: ["Thu"],
+                    starttime: "08:50 PM",
+                    endtime: "09:45 PM",
+                    location: "HAS 20"
+                }
+                ]
+            },
+            {
+                id: "LEC04",
+                day: ["Mon", "Wed"],
+                starttime: "11:15 AM",
+                endtime: "12:05 PM",
+                location: "ICL S110",
+                instructor: "Brokk Toggerson",
+                lab: [
+                {
+                    id: "LAB04",
+                    day: ["Thu"],
+                    starttime: "08:50 PM",
+                    endtime: "09:45 PM",
+                    location: "HAS 20"
+                }
+                ]
+            },
+            {
+                id: "LEC05",
+                day: ["Mon", "Wed"],
+                starttime: "12:20 PM",
+                endtime: "01:10 PM",
+                location: "ICL S110",
+                instructor: "Brokk Toggerson",
+                lab: [
+                {
+                    id: "LAB05",
+                    day: ["Thu"],
+                    starttime: "08:50 PM",
+                    endtime: "09:45 PM",
+                    location: "HAS 20"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        id: "2",
+        classNumber: "114",
+        subject: 'PHY',
+        title: "Theory od Sound with Appl. to Speech and Hearing Science",
+        section: [
+        {
+            id: "LEC01",
+            day: ["Mon", "Wed", "Fri"],
+            starttime: "02:30 PM",
+            endtime: "03:45 PM",
+            location: "HAS 126",
+            instructor: "Tigran Sedrakyan"
+        }
+        ]
+    },
+    {
+        id: "3",
+        classNumber: "100",
+        subject: "PHY",
+        title: "Conceptual Physics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "02:30 PM",
+                endtime: "03:45 PM",
+                location: "HAS 134",
+                instructor: "Guy Blaylock"
+            }
+        ]
+    },
+    {
+        id: "4",
+        classNumber: "118",
+        subject: "PHY",
+        title: "Energy and Society",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "11:15 AM",
+                endtime: "12:05 PM",
+                location: "LGRC A301",
+                instructor: "Guy Blaylock"
+            }
+        ]
+    },
+    {
+        id: "5",
+        classNumber: "121",
+        subject: "PHY",
+        title: "Einstein's Dice",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "10:00 AM",
+                endtime: "11:15 AM",
+                location: "HAS 124",
+                instructor: "Carlo Dallapiccola"
+            }
+        ]
+    },
+    {
+        id: "6",
+        classNumber: "132",
+        subject: "PHY",
+        title: "Introductory Physics II",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "10:10 AM",
+                endtime: "11:00 AM",
+                location: "HAS 20",
+                instructor: "Benjamin Brau"
+            }
+        ]
+    },
+    {
+        id: "7",
+        classNumber: "151",
+        subject: "PHY",
+        title: "General Physics I",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "11:15 AM",
+                endtime: "12:05 PM",
+                location: "HAS 20",
+                instructor: "David Hamilton"
+            },
+            {
+                id: "LEC02",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "12:20 PM",
+                endtime: "01:10 PM",
+                location: "HAS 20",
+                instructor: "David Hamilton"
+            }
+        ]
+    },
+    {
+        id: "8",
+        classNumber: "152",
+        subject: "PHY",
+        title: "General Physics II",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "01:25 PM",
+                endtime: "02:15 PM",
+                location: "HAS 20",
+                instructor: "Jun Yan"
+            }
+        ]
+    },
+    {
+        id: "9",
+        classNumber: "181",
+        subject: "PHY",
+        title: "Physics I - Mechanics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon"],
+                starttime: "12:20 PM",
+                endtime: "01:10 PM",
+                location: "HAS 126",
+                instructor: "Narayanan Menon"
+            },
+            {
+                id: "LEC02",
+                day: ["Tue", "Thu"],
+                starttime: "01:00 PM",
+                endtime: "02:15 PM",
+                location: "ICL S110",
+                instructor: "Narayanan Menon"
+            }
+        ]
+    },
+    {
+        id: "10",
+        classNumber: "181H",
+        subject: "PHY",
+        title: "Physics I - Mechanics Honors",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Wed"],
+                starttime: "05:30 PM",
+                endtime: "06:45 PM",
+                location: "HAS 106",
+                instructor: "Donald Candela"
+            }
+        ]
+    },
+    {
+        id: "11",
+        classNumber: "185",
+        subject: "PHY",
+        title: "Freshman Colloquium",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon"],
+                starttime: "04:00 PM",
+                endtime: "05:15 PM",
+                location: "HAS 124",
+                instructor: "David Hamilton, David Kawall"
+            }
+        ]
+    },
+    {
+        id: "12",
+        classNumber: "281",
+        subject: "PHY",
+        title: "Introduction to Computational Physics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "09:00 AM",
+                endtime: "11:00 AM",
+                location: "LGRC A210",
+                instructor: "Shubha Tewari"
+            },
+            {
+                id: "LEC02",
+                day: ["Wed", "Fri"],
+                starttime: "12:20 PM",
+                endtime: "02:15 PM",
+                location: "LGRC A210",
+                instructor: "Neal Katz"
+            },
+            {
+                id: "LEC03",
+                day: ["Tue", "Thu"],
+                starttime: "02:30 PM",
+                endtime: "04:30 PM",
+                location: "LGRC A210",
+                instructor: "Shubha Tewari"
+            }
+        ]
+    },
+    {
+        id: "13",
+        classNumber: "287",
+        subject: "PHY",
+        title: "Physics III - Thermodynamics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "11:15 AM",
+                endtime: "12:05 PM",
+                location: "HAS 124",
+                instructor: "Manasa Kandula"
+            }
+        ]
+    },
+    {
+        id: "15",
+        classNumber: "289",
+        subject: "PHY",
+        title: "Physics III Lab - Thermodynamics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Wed"],
+                starttime: "02:30 PM",
+                endtime: "04:25 PM",
+                location: "HAS 202",
+                instructor: "Verena Martinez Outschoorn"
+            },
+            {
+                id: "LEC02",
+                day: ["Thu"],
+                starttime: "02:30 PM",
+                endtime: "04:25 PM",
+                location: "HAS 202",
+                instructor: "Verena Martinez Outschoorn"
+            },
+            {
+                id: "LEC03",
+                day: ["Tue"],
+                starttime: "02:30 PM",
+                endtime: "04:25 PM",
+                location: "HAS 202",
+                instructor: "Krishna Kumar"
+            },
+            {
+                id: "LEC05",
+                day: ["Tue"],
+                starttime: "08:30 AM",
+                endtime: "10:25 AM",
+                location: "HAS 202",
+                instructor: "Krishna Kumar"
+            }
+        ]
+    },
+    {
+        id: "16",
+        classNumber: "381",
+        subject: "PHY",
+        title: "Writing in Physics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "HAS 104B",
+                instructor: "Andrea Pocar"
+            }
+        ]
+    },
+    {
+        id: "17",
+        classNumber: "421",
+        subject: "PHY",
+        title: "Mechanics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "10:00 AM",
+                endtime: "11:15 AM",
+                location: "HAS 126",
+                instructor: "Shuang Zhou"
+            }
+        ]
+    },
+    {
+        id: "18",
+        classNumber: "421H",
+        subject: "PHY",
+        title: "Mechanics I Honors",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Fri"],
+                starttime: "05:30 PM",
+                endtime: "06:30 PM",
+                location: "HAS 104A",
+                instructor: "Shuang Zhou"
+            }
+        ]
+    },
+    {
+        id: "19",
+        classNumber: "424",
+        subject: "PHY",
+        title: "Quantum Mechanics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "01:00 PM",
+                endtime: "02:15 PM",
+                location: "LGRC A301",
+                instructor: "Rafael Coelho Lopes de Sa"
+            },
+            {
+                id: "LEC02",
+                day: ["Wed"],
+                starttime: "01:25 PM",
+                endtime: "02:00 PM",
+                location: "LGRC A301",
+                instructor: "Rafael Coelho Lopes de Sa"
+            }
+        ]
+    },
+    {
+        id: "20",
+        classNumber: "424H",
+        subject: "PHY",
+        title: "Quantum Mechanics Honors",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue"],
+                starttime: "04:15 PM",
+                endtime: "05:15 PM",
+                location: "HAS 106",
+                instructor: "Rafael Coelho Lopes de Sa"
+            }
+        ]
+    },
+    {
+        id: "21",
+        classNumber: "440",
+        subject: "PHY",
+        title: "Intermediate Laboratory A",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "01:00 PM",
+                endtime: "03:50 PM",
+                location: "HAS 106",
+                instructor: "Rory Miskimen"
+            },
+            {
+                id: "LEC02",
+                day: ["Mon", "Wed"],
+                starttime: "01:25 PM",
+                endtime: "04:25 PM",
+                location: "HAS 106",
+                instructor: "Lori Goldner"
+            }
+        ]
+    },
+    {
+        id: "22",
+        classNumber: "531",
+        subject: "PHY",
+        title: "Electronics for Scientists I",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon"],
+                starttime: "01:25 PM",
+                endtime: "03:25 PM",
+                location: "TBA",
+                instructor: "David Kawall"
+            }
+        ]
+    },
+    {
+        id: "23",
+        classNumber: "537",
+        subject: "PHY",
+        title: "Quantum Computation",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "04:00 PM",
+                endtime: "05:15 PM",
+                location: "HAS 111",
+                instructor: "Chen Wang"
+            }
+        ]
+    },
+    {
+        id: "24",
+        classNumber: "562",
+        subject: "PHY",
+        title: "Advanced Electricity and Magnetism",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "12:20 PM",
+                endtime: "01:10 PM",
+                location: "HAS 106",
+                instructor: "Nikolay Prokof'ev"
+            }
+        ]
+    },
+    {
+        id: "25",
+        classNumber: "568",
+        subject: "PHY",
+        title: "General Relativity",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "09:05 AM",
+                endtime: "09:55 AM",
+                location: "TBA",
+                instructor: "David Kastor"
+            }
+        ]
+    },
+    {
+        id: "26",
+        classNumber: "601",
+        subject: "PHY",
+        title: "Classical Mechanics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "10:10 AM",
+                endtime: "11:00 AM",
+                location: "HAS 130",
+                instructor: "Romain Vasseur"
+            }
+        ]
+    },
+    {
+        id: "27",
+        classNumber: "602",
+        subject: "PHY",
+        title: "Statistical Physics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "12:20 PM",
+                endtime: "01:10 PM",
+                location: "HAS 130",
+                instructor: "Donald Candela"
+            }
+        ]
+    },
+    {
+        id: "28",
+        classNumber: "605",
+        subject: "PHY",
+        title: "Methods of Mathematical Physics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "11:15 AM",
+                endtime: "12:05 PM",
+                location: "HAS 104B",
+                instructor: "Benny Davidovitch"
+            }
+        ]
+    },
+    {
+        id: "29",
+        classNumber: "615",
+        subject: "PHY",
+        title: "Intermediate Quantum Mechanics II",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "01:00 PM",
+                endtime: "02:15 PM",
+                location: "HAS 104A",
+                instructor: "Tigran Sedrakyan"
+            }
+        ]
+    },
+    {
+        id: "30",
+        classNumber: "651",
+        subject: "PHY",
+        title: "Topics in Laboratory Techniques",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "08:30 AM",
+                endtime: "11:30 AM",
+                location: "HAS 240",
+                instructor: "Irene Dujovne"
+            }
+        ]
+    },
+    {
+        id: "31",
+        classNumber: "691A",
+        subject: "PHY",
+        title: "Seminar: Physics Colloquium",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Wed"],
+                starttime: "04:00 PM",
+                endtime: "05:15 PM",
+                location: "HAS 134",
+                instructor: "Narayanan Menon, Andrea Pocar"
+            }
+        ]
+    },
+    {
+        id: "32",
+        classNumber: "691G",
+        subject: "PHY",
+        title: "Graduate Student Development Seminar",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Wed"],
+                starttime: "02:30 PM",
+                endtime: "03:30 PM",
+                location: "TBA",
+                instructor: "Brokk Toggerson"
+            }
+        ]
+    },
+    {
+        id: "33",
+        classNumber: "718",
+        subject: "PHY",
+        title: "Topics in Continuum Physics",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "02:30 PM",
+                endtime: "03:45 PM",
+                location: "HAS 130",
+                instructor: "Varghese Mathai"
+            }
+        ]
+    },
+    {
+        id: "34",
+        classNumber: "812",
+        subject: "PHY",
+        title: "Quantum Field Theory II",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "LGRT 419B",
+                instructor: "Lorenzo Sorbo"
+            }
+        ]
+    },
+    {
+        id: "35",
+        classNumber: "821",
+        subject: "PHY",
+        title: "General Relativity",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "09:05 AM",
+                endtime: "09:55 AM",
+                location: "TBA",
+                instructor: "David Kastor"
+            }
+        ]
+    },
+    {
+        id: "36",
+        classNumber: "859",
+        subject: "PHY",
+        title: "Introduction to Gauge Theory",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "10:10 AM",
+                endtime: "11:25 AM",
+                location: "LGRT 419B",
+                instructor: "Ben Heidenreich"
+            }
+        ]
+    },
+    {
+        id: "37",
+        classNumber: "891S",
+        subject: "PHY",
+        title: "Graduate STEM Education Seminar",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue"],
+                starttime: "04:00 PM",
+                endtime: "05:15 PM",
+                location: "HAS 109",
+                instructor: "Shubha Tewari"
+            }
+        ]
+    },
+    {
+        id: "38",
+        classNumber: "224",
+        subject: "Classics",
+        title: "Greek Mythology",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "01:25 PM",
+                endtime: "02:15 PM",
+                location: "THOM 104",
+                instructor: "Joseph Wilson"
+            }
+        ]
+    },
+    {
+        id: "39",
+        classNumber: "390STB",
+        subject: "Classics",
+        title: "Archaeology of Early Christianity",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "THOM 104",
+                instructor: "Joseph Wilson"
+            }
+        ]
+    },
+    {
+        id: "40",
+        classNumber: "101",
+        subject: "Judaic",
+        title: "The Jewish Experience I",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "THOM 104",
+                instructor: "Jordan Katz"
+            }
+        ]
+    },
+    {
+        id: "41",
+        classNumber: "102",
+        subject: "Judaic",
+        title: "The Jewish Experience II",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "10:00 AM",
+                endtime: "11:15 AM",
+                location: "THOM 104",
+                instructor: "Aviva Ben-Ur"
+            }
+        ]
+    },
+    {
+        id: "42",
+        classNumber: "221",
+        subject: "Judaic",
+        title: "Jews and Christians in the Early Modern World",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "10:00 AM",
+                endtime: "11:15 AM",
+                location: "THOM 104",
+                instructor: "Jordan Katz"
+            }
+        ]
+    },
+    {
+        id: "43",
+        classNumber: "327",
+        subject: "Judaic/MidEast",
+        title: "Jewish Food in Historical Perspective",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "THOM 104",
+                instructor: "Aviva Ben-Ur"
+            }
+        ]
+    },
+    {
+        id: "44",
+        classNumber: "363",
+        subject: "Judaic",
+        title: "Religion and State",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "11:15 AM",
+                endtime: "12:30 PM",
+                location: "THOM 104",
+                instructor: "Susan Shapiro"
+            }
+        ]
+    },
+    {
+        id: "45",
+        classNumber: "376",
+        subject: "Judaic",
+        title: "Post-Holocaust Thought",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "02:30 PM",
+                endtime: "03:45 PM",
+                location: "THOM 104",
+                instructor: "Susan Shapiro"
+            }
+        ]
+    },
+    {
+        id: "46",
+        classNumber: "361",
+        subject: "MidEast",
+        title: "Sufism: Islamic Mystical Trad. & Legacies",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "04:00 PM",
+                endtime: "05:15 PM",
+                location: "THOM 104",
+                instructor: "Malissa Taylor"
+            }
+        ]
+    },
+    {
+        id: "47",
+        classNumber: "391A",
+        subject: "MidEast",
+        title: "Islamic Society and Culture in the Middle Ages",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Wed"],
+                starttime: "01:25 PM",
+                endtime: "03:45 PM",
+                location: "THOM 104",
+                instructor: "Tayeb El-Hibri"
+            }
+        ]
+    },
+    {
+        id: "48",
+        classNumber: "383",
+        subject: "PHIL",
+        title: "Intro to Philosophy of Religion",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "02:30 PM",
+                endtime: "03:45 PM",
+                location: "THOM 104",
+                instructor: "Mathura Samaram"
+            }
+        ]
+    }                   
 ] 

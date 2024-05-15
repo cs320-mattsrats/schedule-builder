@@ -41,7 +41,15 @@ const Watchlist: FC<TPressed> = ({pressed, toggle}) => {
 
     const [cart, setCart] = useState<TAllCourses[]>([]);
 
+    const colors = ['red', 'gray', 'orange', 'yellow', 'green', 'teal', 'cyan', 'purple', 'pink'];
+
+    const getRandomColor = () => {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+    }
+
     const addToCart = (course: TAllCourses) => {
+        course.color = getRandomColor();
         setCart((prevCartItems) => [...prevCartItems, course]);
         // console.log(cart)
     }
@@ -64,7 +72,7 @@ const Watchlist: FC<TPressed> = ({pressed, toggle}) => {
             });
             
             const responseData = await response.json();
-            console.log(responseData); // Handle the response data as needed
+            // console.log(responseData); // Handle the response data as needed
             toggle();
         } catch (error) {
             console.error('Error:', error);

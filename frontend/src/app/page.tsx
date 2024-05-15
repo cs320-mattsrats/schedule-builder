@@ -65,39 +65,6 @@ export default function Home() {
               </div>
           </div>
           )}
-
-          {/* <SimpleGrid columns={5} spacing={5}>
-            <Course 
-              courseTitle='CS 220: Programming Methodology'
-              courseDescription="Most iconic class with the most iconic professor Marius Minea."
-              courseMoreDetails="Class meets from 1-2pm and in ILC N151">
-            </Course>
-
-            <Course 
-              courseTitle='CS 230: Computer Systems Principles'
-              courseDescription="Most iconic class with the most iconic professor Joe Chiu."
-              courseMoreDetails="Class meets from 2-3pm and in Hasbrouck 20">
-            </Course>
-
-            <Course 
-              courseTitle='CS 250: Introduction to Computation'
-              courseDescription="Most iconic class with the most iconic professor David Mix Barrington."
-              courseMoreDetails="Class meets from 1-2pm and in Goessman">
-            </Course>
-
-            <Course 
-              courseTitle='CS 311: Introduction to Algorithms'
-              courseDescription="Most iconic class with the most iconic professor Ghazaleh Parvini."
-              courseMoreDetails="Class meets from 11am-12pm and in Goessman">
-            </Course>
-
-            <Course 
-              courseTitle='CS 320: Introduction to Software Engineering'
-              courseDescription="Most iconic class with the most iconic professor Matthew Rattigan (WOO HOO :))."
-              courseMoreDetails="Class meets from 2:30pm-3:45pm and in Morril Ctr 1 rm N326">
-            </Course>
-
-          </SimpleGrid> */}
         </div>
 
         <Text

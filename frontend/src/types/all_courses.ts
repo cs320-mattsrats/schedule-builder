@@ -6,4 +6,5 @@ export type TAllCourses = {
     subject: string;
     title: string;
     section: TCourseSchedule[];
+    color?: string;
 }   
