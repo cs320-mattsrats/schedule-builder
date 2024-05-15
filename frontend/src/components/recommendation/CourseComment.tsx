@@ -11,11 +11,19 @@ import {
     useDisclosure,
     Flex
   } from '@chakra-ui/react'
+import React from 'react';
 import Comment from './Comment';
 import Textarea from './Textarea'
 
   export default function CourseComment(props: any) {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    let [value, setValue] = React.useState('')
+
+            let handleInputChange = (e: string) => {
+                let inputValue = e
+                //add comment function
+                setValue(inputValue)
+                }
     return (
       <>
         <Button variant='outline' colorScheme='blue' onClick={onOpen}>Comments</Button>
@@ -27,13 +35,13 @@ import Textarea from './Textarea'
             <ModalCloseButton />
 
             <ModalBody>
-                <Textarea placeholder='Post a comment about this course!'>
+                <Textarea placeholder='Post a comment about this course!' onChange={handleInputChange} >
                 </Textarea>
                 <strong>Comments:</strong>
                 
                 {props.comments}
                 {/* <Flex> */}
-                {/* <Comment comment="This class is the coolest!">
+                <Comment comment="This class is the coolest!">
                 </Comment>
                 <div></div>
                 <Comment comment="best class ever!">
@@ -42,7 +50,7 @@ import Textarea from './Textarea'
                 </Comment>
                 <div></div>
                 <Comment comment="lecture heavy course">
-                </Comment> */}
+                </Comment>
                 {/* </Flex> */}
             </ModalBody>
   
