@@ -13,6 +13,7 @@ import './page.css';
 import {getRandomCourses} from '@/hook/getRandomCourses';
 import { TCourse } from '@/types/courses';
 import axios from 'axios';
+import { text } from 'stream/consumers';
 
 export default function Recommendation() {
 
@@ -32,6 +33,23 @@ export default function Recommendation() {
     console.log('Fetching data...');
     getCourses()
   }, [])
+
+  const getComments = async (course: string) => {
+    console.log('Fetching comments for course...');
+    await axios
+      .post('http://127.0.0.1:8080/recommendation/courses/get-comment/$course')
+      .then(response => {
+        console.log(response)
+      })
+  }
+
+  // const postComments = async () => {
+  //   await axios
+  //     .post('http://127.0.0.1:8080/recommendation/courses/post-comment', {text})
+  //     .then(response => {
+  //       console.log(response)
+  //     })
+  // }
 
   return (
     <Layout>
