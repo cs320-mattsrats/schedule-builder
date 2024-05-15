@@ -9,8 +9,17 @@ import {
 import VSchedule from "@/components/build-calendar/schedule-compare/VSchedule";
 import Watchlist from "@/components/build-calendar/watchlist/Watchlist";
 import CourseHistory from "@/components/build-calendar/courseHistory/CourseHistory";
+import { useState } from "react";
 
 export default function BuildCalendar() {
+
+  const [pressed, setPressed] = useState<boolean>(false);
+
+  const toggle = () => {
+    setPressed((pressed ) => !pressed);
+    console.log('press?', pressed)
+  }
+
   return (
     <Layout>
       <div> 
@@ -19,13 +28,13 @@ export default function BuildCalendar() {
           gap={4}
         >
           <GridItem colSpan={3}  h='200px'>
-            <Watchlist/>
+            <Watchlist pressed = {pressed} toggle = {toggle}/>
           </GridItem>
           <GridItem colSpan={1}  h='250px'>
             <CourseHistory/>
           </GridItem>
           <GridItem colSpan={4}  h='500px'>
-            <VSchedule/>              
+            <VSchedule pressed = {pressed} toggle={toggle}/>              
           </GridItem>
         </Grid>
       </div>

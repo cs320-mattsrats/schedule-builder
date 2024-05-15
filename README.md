@@ -105,12 +105,7 @@ To install all dependencies for the project, you can run:
 
 ### `npm install`
 
-To start the application, you can run:
-
-### `npm start`
-
-This command runs our app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To start the application:
 
 ### `cd api`
 
@@ -118,23 +113,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 If this command results in an error, run `python3 -m venv .venv` first.
 
 ### for windows users: `.venv\Scripts\activate`
-If this command results in an error, run `py -3 -m venv .venv` first.
+
+If there are errors, 'pip install ...' dependencies
 
 ### run `python app.py`
-If you don't see "Pinged your deployment. You successfully connected to MongoDB!" in your terminal as a message that you've connected with the backend, try opening a seperate terminal, outside of the project, and run `/Applications/Python\ 3.12/Install\ Certificates.command ; exit;` 
 
-### open a new terminal and cd into frontend
+### open a new terminal, cd frontend
 
 ### `npm install`
 
 ### `npm run build`
 
-### `npm run start`
 ### `npm run dev`
 
 
-### open the http://localhost:3000 in a browswer
-
+### open the http://localhost:3000 in a browser
 
 ### Our backend:
 By default, our app uses a backend hosted online. You can find server/README.md to learn more about our backend and how to run it locally instead.
@@ -175,7 +168,7 @@ The Student Feedback section consists of shape containers with text in them mean
 
 # Bugs/Limitations
 
-In it's current state, our scheudle buidler struggles with conflicting schedule times when generating schedules. Additioanlly, there is not databse for student comments, they have been harded coded in. Moreover, when geenrating schedules we had difficulty implementing a no overlapping times algorithm.
+In it's current state, our scheudle buidler struggles with conflicting schedule times when generating schedules. Additioanlly, there is not databse for student comments, they have been harded coded in. Moreover, when geenrating schedules we had difficulty implementing a no overlapping times algorithm. Login and signup not fuctional.
 
 # Team Member Names:
 

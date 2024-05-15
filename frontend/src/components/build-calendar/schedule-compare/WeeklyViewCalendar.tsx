@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { Table, TableCaption, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react';
+import { CalendarIcon } from '@chakra-ui/icons';
 
 import { Task } from '@/types/courses';
 import { TaskDictionary } from '@/types/courses';
+import CourseDescription from './CourseDescription';
 
 interface WeeklyPlannerProps {
   tasks: TaskDictionary;
 }
-const tasks: TaskDictionary = {
-  Mon: [{ color: 'yellow', startTime: "15:30", endTime: "16:15" }],
-  Tue: [{ color: 'orange', startTime: "10:00", endTime: "11:00" }, { color: 'pink', startTime: "12:00", endTime: "13:15" }],
-  Wed: [{ color: 'green', startTime: "13:00", endTime: "14:00" }],
-  Thu: [{ color: 'yellow', startTime: "12:00", endTime: "13:15" }],
-  Fri: [{ color: 'orange', startTime: "12:00", endTime: "13:15" }, { color: 'green', startTime: "15:30", endTime: "16:15" }]
-};
+// const tasks: TaskDictionary = {
+//   Mon: [{ color: 'yellow', startTime: "15:30", endTime: "16:15" }],
+//   Tue: [{ color: 'orange', startTime: "10:00", endTime: "11:00" }, { color: 'pink', startTime: "12:00", endTime: "13:15" }],
+//   Wed: [{ color: 'green', startTime: "13:00", endTime: "14:00" }],
+//   Thu: [{ color: 'yellow', startTime: "12:00", endTime: "13:15" }],
+//   Fri: [{ color: 'orange', startTime: "12:00", endTime: "13:15" }, { color: 'green', startTime: "15:30", endTime: "16:15" }]
+// };
 export const timeToPosition = (startTime: string, endTime: string, scale: number = 60) => {
   const parseTime = (time: string) => {
     const [hours, minutes] = time.split(':').map(Number);
@@ -29,9 +31,11 @@ export const timeToPosition = (startTime: string, endTime: string, scale: number
 };
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];  
 const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
+
+  // console.log(tasks)
   // Function to generate time slots from 8 am to 7 pm
   return (
-    <div style={{ width:'100%',display: 'flex', height: '540px', border: '1px solid #ccc' }}> {/* 540px = 9 hours * 60px per hour */}
+    <div style={{ width:'700px',display: 'flex', height: '800px', border: '1px solid #ccc', borderRadius: '10px'}}> {/* 540px = 9 hours * 60px per hour */}
       {days.map(day => (
         <div key={day} style={{ flex: 1, margin: '5px', position: 'relative' }}>
           <div>{day}</div>
@@ -40,18 +44,29 @@ const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
             return (
               <div key={index} style={{
                 position: 'absolute',
-                top: `${top}px`,
-                width: '100%',
+                top: `${top+100}px`,
                 height: `${height}px`,
-                backgroundColor: task.color,
-                color: 'white',
+                // backgroundColor: task.color,
+                // color: 'white',
               }}>
-                {`${task.startTime} - ${task.endTime}`}
+                <CourseDescription 
+                  key = {index} 
+                  task={task}
+                />
               </div>
             );
           })}
         </div>
       ))}
+      <div style={{  bottom:'0px'}}>
+      <IconButton
+            // variant='outline'
+            aria-label='Add Course'
+            size='sm'
+            colorScheme='blue'
+            icon={<CalendarIcon />}
+        />
+      </div>
     </div>
   );
 }

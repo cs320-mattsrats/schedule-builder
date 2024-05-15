@@ -1,23 +1,33 @@
-import React, { useRef }  from 'react'
-import {
-    Tabs, 
-    TabList, 
-    TabPanels, 
-    Tab, 
-    TabPanel,
-    Card, CardHeader, CardBody, CardFooter
-} from "@chakra-ui/react"
+import React, { useRef, useState, useEffect }  from 'react'
+import {} from "@chakra-ui/react"
 import { TaskDictionary } from '@/types/courses';
 import WeeklyViewCalendar from './WeeklyViewCalendar';
-const tasks: TaskDictionary = {
-  Mon: [{ color: 'yellow', startTime: "15:30", endTime: "16:15" }],
-  Tue: [{ color: 'orange', startTime: "10:00", endTime: "11:00" }, { color: 'pink', startTime: "12:00", endTime: "13:15" }],
-  Wed: [{ color: 'green', startTime: "13:00", endTime: "14:00" }],
-  Thu: [{ color: 'yellow', startTime: "12:00", endTime: "13:15" }],
-  Fri: [{ color: 'orange', startTime: "12:00", endTime: "13:15" }, { color: 'green', startTime: "15:30", endTime: "16:15" }]
-};
+import { TAllCourses } from '@/types/all_courses';
+import axios from 'axios';
+import transformData from '@/hook/transformData';
+import { TPressed } from '../types';
+const task: TaskDictionary = {
+  "Mon": [
+    { "color": "yellow", "id": "LEC02", "classNumber": "230", "subject": "COMPSCI", "title": "Computer Systems Principles", "startTime": "15:30", "endTime": "16:15", "location": "HasbAd 124", "instructor": "Bovornkeeratiroj" }
+  ],
+  "Tue": [
+    { "color": "orange", "id": "LEC01", "classNumber": "305", "subject": "CICS", "title": "Social Issues in Computing", "startTime": "10:00", "endTime": "11:00", "location": "MOR1N349", "instructor": "Mei" },
+    { "color": "pink", "id": "LEC12", "classNumber": "305", "subject": "CICS", "title": "Social Issues in Computing", "startTime": "12:00", "endTime": "13:15", "location": "LGRC A310", "instructor": "Mei" }
+  ],
+  "Wed": [
+    { "color": "green", "id": "LEC02", "classNumber": "230", "subject": "COMPSCI", "title": "Computer Systems Principles", "startTime": "13:00", "endTime": "14:00", "location": "HasbAd 124", "instructor": "Bovornkeeratiroj" }
+  ],
+  "Thu": [
+    { "color": "yellow", "id": "LEC01", "classNumber": "305", "subject": "CICS", "title": "Social Issues in Computing", "startTime": "12:00", "endTime": "13:15", "location": "MOR1N349", "instructor": "Mei" }
+  ],
+  "Fri": [
+    { "color": "orange", "id": "LAB02LN", "classNumber": "230", "subject": "COMPSCI", "title": "Computer Systems Principles", "startTime": "12:00", "endTime": "13:15", "location": "SKIN0106", "instructor": "Bovornkeeratiroj" },
+    { "color": "green", "id": "LAB02LQ", "classNumber": "230", "subject": "COMPSCI", "title": "Computer Systems Principles", "startTime": "15:30", "endTime": "16:15", "location": "SKIN0106", "instructor": "Bovornkeeratiroj" }
+  ]
+}
 
-const VSchedule: React.FC = () => {
+
+const VSchedule: React.FC<TPressed> = ({pressed, toggle}) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (scrollOffset: number) => {
@@ -26,41 +36,56 @@ const VSchedule: React.FC = () => {
     }
   };
 
+  const [taskDic, setTaskDic] = useState<TaskDictionary[]>();
+
+  const getCourses = async () => {
+    await axios
+      .get('http://127.0.0.1:8080/get-schedule')
+      .then(response => {
+        setTaskDic(transformData(response.data.data))
+        // console.log(taskDic)
+      })
+  }
+
+  //Fetch data from the Flask server
+  useEffect(() => {
+    console.log('Fetching data...');
+    getCourses()
+  }, [pressed])
+
   return (
-    <Tabs variant='soft-rounded' colorScheme='green'>
-        <TabList>
-        <Tab>Vertical</Tab>
-        <Tab>Horizontal</Tab>
-        </TabList>
-        <TabPanels>
-        <TabPanel>
-        <div style={{ display: 'flex', height: '100vh', width: '100%' }}>
-      <div style={{ flex: 1, overflowY: 'auto' }}>
-        <WeeklyViewCalendar tasks={tasks} />
+    <>
+      {
+        taskDic ? (
+          <div style={{ display: 'flex', overflowX: 'auto', gap: '10px' }}>
+            {
+              taskDic.map((tasks, index) => (
+                <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }} key = {index}>
+                  <WeeklyViewCalendar 
+                    // key = {index} 
+                    tasks = {tasks}
+                  />
+                </div>
+              ))
+            }
+          </div>
+        ) : (
+          // Page for the loading screen
+          <div className="centered">
+          <div className="trendbar-loading">
+              <div className="spinner"></div>
+              <p>Loading...</p>
+          </div>
       </div>
-      <div style={{ flex: 1, backgroundColor: 'grey', overflowY: 'auto' }}>
-        {/* Content that will be vertically scrollable */}
-        <div style={{ padding: '20px' }}>
-          <h2>Additional Content</h2>
-          <p>This area is for additional content that may be vertically scrollable. Add your custom components or other elements as needed here.</p>
-          {/* Example content */}
-          {Array.from({ length: 50 }, (_, i) => (
-            <p key={i}>Item {i + 1}</p>
-          ))}
-        </div>
-      </div>
-    </div>
-        </TabPanel>
-        <TabPanel>
-        <div style={{ display: 'flex', overflowX: 'auto', gap: '20px', padding: '20px' }}>
-        <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
-        <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
-        <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
-        <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
-        </div>
-        </TabPanel>
-        </TabPanels>
-    </Tabs>
+      )
+      }
+       {/* <div style={{ display: 'flex', overflowX: 'auto', gap: '10px' }}>
+     <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
+      <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
+      <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div>
+      <div style={{ minWidth: '400px', flexShrink: 0,background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><WeeklyViewCalendar tasks={tasks} /></div> 
+    </div> */}
+    </>
   )
 }
 

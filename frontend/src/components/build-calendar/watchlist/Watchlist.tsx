@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState, FC} from 'react'
 import {
     Button,
     Wrap,
@@ -25,12 +25,13 @@ import { SearchBar } from '../addCourse/SearchBar';
 import { mock_next_courses } from '@/mock/courses_with_schedule';
 import SuggestCourses from '../addCourse/SuggestCourses';
 import { useRouter } from "next/navigation";
-import SearchResults from '../addCourse/SearchResults';
 import { getRandomScheduleCourses } from '@/hook/getRandomCourses';
 import { TAllCourses } from '@/types/all_courses';
-import { generateSchedules } from '@/hook/generateSchedule';
 
-const Watchlist = () => {
+import { generateSchedules } from '@/hook/generateSchedule';
+import { TPressed } from '../types';
+
+const Watchlist: FC<TPressed> = ({pressed, toggle}) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const initialRef = useRef(null)
     const finalRef = useRef(null);
@@ -40,7 +41,15 @@ const Watchlist = () => {
 
     const [cart, setCart] = useState<TAllCourses[]>([]);
 
+    const colors = ['red', 'gray', 'orange', 'yellow', 'green', 'teal', 'cyan', 'purple', 'pink'];
+
+    const getRandomColor = () => {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+    }
+
     const addToCart = (course: TAllCourses) => {
+        course.color = getRandomColor();
         setCart((prevCartItems) => [...prevCartItems, course]);
         // console.log(cart)
     }
@@ -50,19 +59,31 @@ const Watchlist = () => {
         setCart(updatedCart);
       };
 
-    useEffect(() => {
-        console.log('haha',cart)
-    },[cart]);
-
-    const generateSchedule = () => {
-        const res = generateSchedules(cart)
-        console.log
-    }
+    const postSchedule = async () => {
+        // e.preventDefault();
+        
+        try {
+            const response = await fetch('http://localhost:8080//post-schedule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ data: generateSchedules(cart) }), // Assuming you want to send the input value in JSON format
+            });
+            
+            const responseData = await response.json();
+            // console.log(responseData); // Handle the response data as needed
+            toggle();
+        } catch (error) {
+            console.error('Error:', error);
+            // Handle error
+        }
+    };
 
     return (
         <Flex flexDirection={"column"} gap="2">
             <Flex minWidth='max-content' alignItems='center' gap='3' justifyContent={"flex-end"}>
-            <Button colorScheme='pink' onClick={() => generateSchedules(cart)}>Generate</Button>
+            <Button colorScheme='pink' onClick={() => postSchedule()}>Generate</Button>
             </Flex>
             <Wrap spacing={4} alignItems='center'>
             {cart ? (

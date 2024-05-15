@@ -1,17 +1,17 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-# from calendar_blueprint import calendar
+from calendar_blueprint import calendar
+from recommendation_blueprint import recommendation
 from database import db
 
 app = Flask(__name__)
+CORS(app)
 
 collection = db["courses"]
 
-# app.register_blueprint(calendar)
-CORS(app)
 @app.route('/')
 def index():
-    return 'Hello, Flask!'
+    return "<p>Hello, World!</p>"
 
 @app.route('/courses', methods=['GET'])
 def get_courses():
@@ -29,5 +29,7 @@ def get_courses():
 
     return jsonify({'data': data})
 
+app.register_blueprint(calendar)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
