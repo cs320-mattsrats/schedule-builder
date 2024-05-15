@@ -46,11 +46,6 @@ export default function Nav() {
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
-              <Button rightIcon={<FaSignInAlt />} onClick={() => {router.push("/signin")}}>Sign In</Button>
-              <Button onClick={() => {router.push("/signin")}}>Sign Up</Button>
-              {/* <a href="/signup" target="_blank">
-                <Button>Sign Up</Button>
-              </a> */}
             </Stack>
           </Flex>
         </Flex>
