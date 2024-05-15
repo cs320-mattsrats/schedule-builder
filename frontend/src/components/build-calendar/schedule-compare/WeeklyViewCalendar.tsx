@@ -5,6 +5,7 @@ import { CalendarIcon } from '@chakra-ui/icons';
 import { Task } from '@/types/courses';
 import { TaskDictionary } from '@/types/courses';
 import CourseDescription from './CourseDescription';
+import axios from 'axios';
 
 interface WeeklyPlannerProps {
   tasks: TaskDictionary;
@@ -30,6 +31,14 @@ export const timeToPosition = (startTime: string, endTime: string, scale: number
   return { top, height };
 };
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];  
+
+const selectSchedule = async (taskDictionary: TaskDictionary) => {
+  await axios.post('http://127.0.0.1:8080/select-schedule', {
+      selectedSchedule: taskDictionary
+  }).then(response => console.log(response.data.message))
+    .catch(error => console.error('Error posting schedule:', error));
+};
+
 const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
   // Function to generate time slots from 8 am to 7 pm
   return (
@@ -56,6 +65,7 @@ const WeeklyViewCalendar: React.FC<WeeklyPlannerProps> = ({ tasks }) => {
             size='sm'
             colorScheme='blue'
             icon={<CalendarIcon />}
+            onClick={() => selectSchedule(tasks)}
         />
       </div>
     </Box>

@@ -112,7 +112,6 @@ export default function Home() {
         </Text>
 
         <Schedule/>
-        
         <div>
         <Text
           as={"span"}

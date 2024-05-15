@@ -30,3 +30,26 @@ def post_schedule():
 #         response = {"title": title, "body": body}
 #         collection.insert_one(response)
 #         return response, 201
+<<<<<<< Updated upstream
+=======
+
+@calendar.route("/select-schedule", methods=["POST"])
+def select_schedule():
+    data = request.get_json()
+    selected_schedule = data['selectedSchedule']
+    collection = db['selectedSchedule']
+    collection.delete_many({})  # Clear previous selections
+    collection.insert_one(selected_schedule)  # Store new selection
+    return jsonify({'message': 'Schedule selected successfully'}), 200
+
+
+@calendar.route("/get-selected-schedule", methods=["GET"])
+def get_selected_schedule():
+    collection = db['selectedSchedule']
+    selected_schedule = collection.find_one()  # Assuming only one is stored
+    if selected_schedule:
+        selected_schedule.pop('_id')  # Remove MongoDB's default ID if needed
+        return jsonify(selected_schedule), 200
+    else:
+        return jsonify({'error': 'No schedule selected'}), 404
+>>>>>>> Stashed changes
