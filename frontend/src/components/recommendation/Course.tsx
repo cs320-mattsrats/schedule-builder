@@ -12,7 +12,7 @@ const Course: FC<TCourseCard> = ({course}) => {
   return (
     <Card>
       <CardHeader>
-        <Heading size="md">{course.id}: {course.title}</Heading>
+        <Heading size="md">{course.title}: {course.title}</Heading>
       </CardHeader>
       <CardBody>
         {/* <Text>Professor: {course.title}</Text> */}
@@ -20,7 +20,7 @@ const Course: FC<TCourseCard> = ({course}) => {
       </CardBody>
       <CardFooter>
         <Description courseTitle = {course.title} courseDescription = {course.description}/>
-        <CourseComment courseTitle = {course.title} key = {course._id} > </CourseComment>
+        <CourseComment courseTitle = {course.title} key = {course.id} > </CourseComment>
       </CardFooter>
     </Card>
   );

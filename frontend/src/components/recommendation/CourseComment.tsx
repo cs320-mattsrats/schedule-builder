@@ -30,14 +30,10 @@ import Textarea from './Textarea'
                 <Textarea placeholder='Post a comment about this course!'>
                 </Textarea>
                 <strong>Comments:</strong>
-                {/* {props.courseComments.map((comments, index) => (
-                <Comment
-                  key = {index} 
-                  comments = {comments}
-                />
-                    ))} */}
-                <Flex>
-                <Comment comment="This class is the coolest!">
+                
+                {props.comments}
+                {/* <Flex> */}
+                {/* <Comment comment="This class is the coolest!">
                 </Comment>
                 <div></div>
                 <Comment comment="best class ever!">
@@ -46,8 +42,8 @@ import Textarea from './Textarea'
                 </Comment>
                 <div></div>
                 <Comment comment="lecture heavy course">
-                </Comment>
-                </Flex>
+                </Comment> */}
+                {/* </Flex> */}
             </ModalBody>
   
             <ModalFooter>
