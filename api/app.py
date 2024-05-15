@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from calendar_blueprint import calendar
+from recommendation_blueprint import recommendation
 from database import db
 
 app = Flask(__name__)
