@@ -2659,5 +2659,181 @@ export const mock_next_courses: TAllCourses[] = [
                 instructor: "Shubha Tewari"
             }
         ]
+    },
+    {
+        id: "38",
+        classNumber: "224",
+        subject: "Classics",
+        title: "Greek Mythology",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed", "Fri"],
+                starttime: "01:25 PM",
+                endtime: "02:15 PM",
+                location: "THOM 104",
+                instructor: "Joseph Wilson"
+            }
+        ]
+    },
+    {
+        id: "39",
+        classNumber: "390STB",
+        subject: "Classics",
+        title: "Archaeology of Early Christianity",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "THOM 104",
+                instructor: "Joseph Wilson"
+            }
+        ]
+    },
+    {
+        id: "40",
+        classNumber: "101",
+        subject: "Judaic",
+        title: "The Jewish Experience I",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "THOM 104",
+                instructor: "Jordan Katz"
+            }
+        ]
+    },
+    {
+        id: "41",
+        classNumber: "102",
+        subject: "Judaic",
+        title: "The Jewish Experience II",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "10:00 AM",
+                endtime: "11:15 AM",
+                location: "THOM 104",
+                instructor: "Aviva Ben-Ur"
+            }
+        ]
+    },
+    {
+        id: "42",
+        classNumber: "221",
+        subject: "Judaic",
+        title: "Jews and Christians in the Early Modern World",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "10:00 AM",
+                endtime: "11:15 AM",
+                location: "THOM 104",
+                instructor: "Jordan Katz"
+            }
+        ]
+    },
+    {
+        id: "43",
+        classNumber: "327",
+        subject: "Judaic/MidEast",
+        title: "Jewish Food in Historical Perspective",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "11:30 AM",
+                endtime: "12:45 PM",
+                location: "THOM 104",
+                instructor: "Aviva Ben-Ur"
+            }
+        ]
+    },
+    {
+        id: "44",
+        classNumber: "363",
+        subject: "Judaic",
+        title: "Religion and State",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "11:15 AM",
+                endtime: "12:30 PM",
+                location: "THOM 104",
+                instructor: "Susan Shapiro"
+            }
+        ]
+    },
+    {
+        id: "45",
+        classNumber: "376",
+        subject: "Judaic",
+        title: "Post-Holocaust Thought",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "02:30 PM",
+                endtime: "03:45 PM",
+                location: "THOM 104",
+                instructor: "Susan Shapiro"
+            }
+        ]
+    },
+    {
+        id: "46",
+        classNumber: "361",
+        subject: "MidEast",
+        title: "Sufism: Islamic Mystical Trad. & Legacies",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Mon", "Wed"],
+                starttime: "04:00 PM",
+                endtime: "05:15 PM",
+                location: "THOM 104",
+                instructor: "Malissa Taylor"
+            }
+        ]
+    },
+    {
+        id: "47",
+        classNumber: "391A",
+        subject: "MidEast",
+        title: "Islamic Society and Culture in the Middle Ages",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Wed"],
+                starttime: "01:25 PM",
+                endtime: "03:45 PM",
+                location: "THOM 104",
+                instructor: "Tayeb El-Hibri"
+            }
+        ]
+    },
+    {
+        id: "48",
+        classNumber: "383",
+        subject: "PHIL",
+        title: "Intro to Philosophy of Religion",
+        section: [
+            {
+                id: "LEC01",
+                day: ["Tue", "Thu"],
+                starttime: "02:30 PM",
+                endtime: "03:45 PM",
+                location: "THOM 104",
+                instructor: "Mathura Samaram"
+            }
+        ]
     }                   
 ] 
