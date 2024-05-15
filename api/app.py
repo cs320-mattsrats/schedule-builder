@@ -30,6 +30,6 @@ def get_courses():
     return jsonify({'data': data})
 
 app.register_blueprint(calendar)
-
+app.register_blueprint(recommendation)
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
