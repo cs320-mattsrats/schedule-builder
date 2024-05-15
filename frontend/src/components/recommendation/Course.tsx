@@ -1,5 +1,6 @@
 import { Card, CardBody, CardHeader, Heading, Text, Button, CardFooter } from "@chakra-ui/react";
 import Description from "./Description";
+import CourseComment from "./CourseComment";
 import { TCourseCard } from "./types";
 import React, { FC,useState } from "react";
 import showLimitedWords from "@/hook/showLimitedWords";
@@ -19,6 +20,7 @@ const Course: FC<TCourseCard> = ({course}) => {
       </CardBody>
       <CardFooter>
         <Description courseTitle = {course.title} courseDescription = {course.description}/>
+        <CourseComment courseTitle = {course.title} key = {course._id} > </CourseComment>
       </CardFooter>
     </Card>
   );

@@ -16,17 +16,12 @@ import theme from './theme';
 export default function Comment(props:any) {  
     return (
         <ChakraProvider theme={theme}>
-        <Box z-index={props.zindex} position="relative" transform={props.pos} p={12}>
+        <Box position="relative" transform={props.pos} p={12} fontSize='large'>
           <Center>
           <Card >
-          <CardHeader>
-            <Heading>{props.course}</Heading>
-          </CardHeader>
           <CardBody>
             {props.comment}
           </CardBody>
-          {/* <CardFooter>
-          </CardFooter> */}
         </Card>
           </Center>
         </Box>

@@ -15,9 +15,9 @@ import {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
       <>
-        <Button onClick={onOpen}>View Details</Button>
+        <Button variant='solid' colorScheme='blue' onClick={onOpen}>View Details</Button>
   
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal size='6xl' isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>{props.courseTitle}</ModalHeader>
@@ -25,10 +25,6 @@ import {
 
             <ModalBody>
                 <strong>Course Description:</strong> {props.courseDescription}
-            </ModalBody>
-
-            <ModalBody>
-              <strong>Meeting Times:</strong> {props.moreDetails}
             </ModalBody>
   
             <ModalFooter>
