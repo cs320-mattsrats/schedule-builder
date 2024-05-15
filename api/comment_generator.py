@@ -78,9 +78,9 @@ def upload_to_db(course: str, comments: list[str]):
 
 
 courses = course_collection.find({}, {"id": True, "_id": False})
-
+num_of_comments = 10
 for course in courses:
-    generated_comments = generate_comments(course["id"], 10)
+    generated_comments = generate_comments(course["id"], num_of_comments)
     print(course["id"])
     upload_to_db(course["id"], generated_comments)
 
