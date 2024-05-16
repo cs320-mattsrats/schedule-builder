@@ -4,7 +4,6 @@ import { TaskDictionary } from '@/types/courses';
 import axios from 'axios';
 
 export default function Schedule() {
-  // Function to generate time slots from 8 am to 7 pm
   const generateTimeSlots = () => {
     const timeSlots: string[] = [];
     for (let hour = 8; hour <= 19; hour++) {
