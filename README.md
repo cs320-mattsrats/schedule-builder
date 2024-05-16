@@ -109,9 +109,10 @@ To start the application:
 
 ### `cd api`
 
+### for Mac users: `python3 -m venv .venv`
 ### for Mac users: `. .venv/bin/activate`
-If this command results in an error, run `python3 -m venv .venv` first.
 
+### for windows users: `py -3 -m venv .venv`
 ### for windows users: `.venv\Scripts\activate`
 
 If there are errors, 'pip install ...' dependencies
